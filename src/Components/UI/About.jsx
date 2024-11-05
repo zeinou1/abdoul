@@ -31,15 +31,15 @@ const scrollToTop = () => {
             {setShowText ? (
               <span className="text-xl text-gray-50">lire la suite</span>
             ) : (
-              "Afficher"
+               ""
             )}
           </button>
 
           {showText && (
-            <p className="text-lg text-primaryColor font-bold mt-2 leading-8">
-              Je suis à la recherche d’une opportunité où je peux contribuer avec mon
-              expertise en React tout en continuant à grandir en tant que développeur.
-              Prêt à relever de nouveaux défis.
+              <p className="text-lg text-primaryColor font-bold mt-2 leading-8">
+                Je suis à la recherche d’une opportunité où je peux contribuer avec mon
+                expertise en React tout en continuant à grandir en tant que développeur.
+                Prêt à relever de nouveaux défis.
             </p>
           )}
         </div>
@@ -60,7 +60,7 @@ const scrollToTop = () => {
               {" "}
               <span className="text-primaryColor">E-mail:</span>{" "}
               <span>
-                <a href="zarikader@example.com" className="">
+                <a href="mailto:zarikader@example.com" className="">
                   contactmehere@gmail.com
                 </a>
               </span>
@@ -71,21 +71,27 @@ const scrollToTop = () => {
               <span className="text-gray-50 text-5xl ">
                 <i className="ri-facebook-fill"></i>
               </span>{" "}
-              <span className="pl-2">Facebook</span>
+              <span className="pl-2">
+                <a href="/">Facebook</a>
+              </span>
               <span className="text-4xl"></span>
             </div>
             <div>
               <span className="text-gray-50 text-5xl ">
                 <i className="ri-github-fill"></i>
               </span>{" "}
-              <span className="pl-2">Github</span>
+              <span className="pl-2">
+                <a href="/">Github</a>
+              </span>
               <span className="text-4xl"></span>
             </div>
             <div>
               <span className="text-gray-50 text-5xl ">
                 <i className="ri-linkedin-fill"></i>
               </span>{" "}
-              <span className="pl-2">Facebook</span>
+              <span className="pl-2">
+                <a href="/">LinkedIn</a>
+              </span>
               <span className="text-4xl"></span>
             </div>
           </div>
@@ -117,7 +123,7 @@ const scrollToTop = () => {
                     Valorisation des usages numériques
                   </h6>
                   <p className="text-primaryColor text-md">Université Paris 8</p>
-                  <span className="text-primaryColor text-md">2021 - 2022</span>
+                  <span className="text-primaryColor text-md">2019 - 2020</span>
                 </div>
 
                 <div
@@ -149,7 +155,7 @@ const scrollToTop = () => {
                   <h6 className="text-gray-50 md:text-lg ">Employé carrefour Market</h6>
                   <span className="text-primaryColor text-md">2020 - 2023</span>
                   <p className="text-primaryColor text-md">
-                    Gestion des Commandes - Étiquetage - Mise en rayon - Drive -
+                    Gestion des Commandes - Étiquetage - Drive -
                     Inventaire
                   </p>
                 </div>
