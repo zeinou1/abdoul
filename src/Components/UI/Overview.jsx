@@ -107,7 +107,7 @@ const Overview = () => {
                   className="w-full border-4 border-primaryColor p-5 bg-[#2A1612] text-center text lg:text-xl text-primaryColor hover:bg-[#a15c2e] hover:text-white hover:border-separate ">
                     <button className="transform transition-transform duration-300 hover:scale-105">
                       <span className="group:hover:bg-primaryColor hover:text-white">
-                        <Link to="/error" > Récuperer le PDF maintenant ! </Link>
+                        <Link to="/error" > Récupérer le PDF maintenant ! </Link>
                       </span>
                     </button>
                   </div>
@@ -123,7 +123,7 @@ const Overview = () => {
                           <i className="ri-arrow-left-fill"></i>
                         </span>
                         <span className="self-center">
-                          <Link to="/apropos">Apropos de moi !</Link>
+                          <Link to="/apropos">À propos de moi !</Link>
                         </span>
                       </span>
                     </button>
