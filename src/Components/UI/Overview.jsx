@@ -99,7 +99,7 @@ const Overview = () => {
                     </button>
                   </div>
 
-                  <div 
+                  <div
                   data-aos = "fade-up"
                   data-aos-duration="2000"
                   data-aos-delay="400"
@@ -107,7 +107,7 @@ const Overview = () => {
                   className="w-full border-4 border-primaryColor p-5 bg-[#2A1612] text-center text lg:text-xl text-primaryColor hover:bg-[#a15c2e] hover:text-white hover:border-separate ">
                     <button className="transform transition-transform duration-300 hover:scale-105">
                       <span className="group:hover:bg-primaryColor hover:text-white">
-                        Récuperer le PDF maintenant !
+                        <Link to="/error" > Récuperer le PDF maintenant ! </Link>
                       </span>
                     </button>
                   </div>

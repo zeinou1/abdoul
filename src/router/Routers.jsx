@@ -6,6 +6,7 @@ import Project1 from "../pages/Project1";
 import Project2 from "../pages/Project2";
 import Project3 from "../pages/Project3";
 import Project4 from "../pages/Project4";
+import ErrorPG from "../pages/ErrorPG.jsx";
 
 const Routers = () => {
   return (
@@ -16,6 +17,7 @@ const Routers = () => {
       <Route path="/projects-2" element={<Project2 />} />
       <Route path="/projects-3" element={<Project3 />} />
       <Route path="/projects-4" element={<Project4 />} />
+      <Route path="/error" element={<ErrorPG />} />
       <Route path="/resume" element={<Resume />} />
       <Route path="/apropos" element={<About />} />
     </Routes>
