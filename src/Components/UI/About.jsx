@@ -39,8 +39,7 @@ const scrollToTop = () => {
             <p className="text-lg text-primaryColor font-bold mt-2 leading-8">
               Je suis à la recherche d’une opportunité où je peux contribuer avec mon
               expertise en React tout en continuant à grandir en tant que développeur.
-              Prêt à relever de nouveaux défis, je serais ravi de discuter de comment je
-              peux apporter mes compétences à votre équipe.
+              Prêt à relever de nouveaux défis.
             </p>
           )}
         </div>
