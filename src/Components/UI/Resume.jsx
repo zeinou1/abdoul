@@ -210,10 +210,10 @@ const Resume = () => {
         </div>
       </div>
       <button
-        className="btn bg-primaryColor text-gray-50 absolute right-5 bottom-36"
-        onClick={scrollToTop}
+          className="btn bg-primaryColor text-gray-50 absolute right-5 bottom-48 "
+          onClick={scrollToTop}
       >
-        top
+        <i className="ri-arrow-up-line"></i>
       </button>
       {/* End resume */}
       <div className="flex flex-col items-center justify-center text-center ">

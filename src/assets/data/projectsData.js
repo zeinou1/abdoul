@@ -18,17 +18,17 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Ohmyfood",
-    date: "Aout 2023",
-    languages: ["Html", "Css", "Sass"],
+    title: "Web agency",
+    date: "Septembre 2024",
+    languages: ["TailwindCss", "React"],
     infos:
-      "Ohmyfood est un site de restauration rapide, qui permet de faire de réservation en ligne ",
+      "Un site web d'une société qui offre des solutions en transformation numérique et SEO.",
 
     img: "./images/img-projects/Ohmy1.png",
-    link: "https://zeinou1.github.io/ohmyfood_4/",
-    code: "https://github.com/zeinou1/ohmyfood_4",
+    link: "https://weba-gency.vercel.app/",
+    code: "https://github.com/zeinou1/agency/tree/V1agency",
     images: ["./images/img-projects/Ohmy2.png", "./images/img-projects/Ohmy1.png"],
-    competences: ["Base Css", "Animation Css", "Mobile first"],
+    competences: ["Animation", "Mobile first"],
   },
   {
     id: 3,

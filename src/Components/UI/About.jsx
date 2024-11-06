@@ -143,16 +143,54 @@ const scrollToTop = () => {
         {/* End formation */}
         {/* Experience */}
         <div className="formation mt-24">
-          <h3 className="text-gray-50 text-xl">Expérience professionnelle</h3> <br />
+          <h3 className="text-gray-50 text-xl">Expériences professionnelles</h3> <br />
           <div className="formation__wrapper">
             <div className="formation__content">
               <div className="formation__group flex flex-col justify-center gap-7">
-                <div 
-                 data-aos ="fade-up"
-                 data-aos-duration="1500"
-                 data-aos-delay="200"
-                className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor">
-                  <h6 className="text-gray-50 md:text-lg ">Employé carrefour Market</h6>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
+                    data-aos-delay="200"
+                    className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor">
+                  <h6 className="text-gray-50 md:text-lg ">Projet personnel</h6>
+                  <div className="lg:flex  lg:gap-10 lg:flex-row flex flex-col gap-4
+                  ">
+                    <h6>VisitKM : <span> Un site de réservation d’Appartement en ligne</span></h6>
+                    <span className="text-primaryColor text-md">2020 - 2023</span>
+                  </div>
+                  <div className="text-primaryColor text-md">
+                    <div>
+                 <h6 className="text-gray-600 font-bold">Technologies:</h6>
+                       <br/><span>React, Redux-Toolkit, API-Context, Tailwind Css</span>
+                    </div>
+                  </div>
+                  <div className="text-primaryColor text-md">
+
+                    <div>
+                      <h6 className="text-gray-600 font-bold">Rôle</h6>
+                      <br/><span>Création d'interfaces utilisateurs, gestion de l'état avec Redux Toolkit</span>
+                    </div>
+                  </div>
+                  <div className="text-primaryColor text-md">
+                    <div>
+                      <h6 className="text-gray-600 font-bold"> Fonctionnalités:</h6>
+                      <br/><span>
+                      <div className="flex flex-col gap-2">
+                         <span>1. Intégré des API pour gérer l'authentification des utilisateurs Par (Token)</span> <br/>
+                      <span>2. L’ajout d’appartement, L’enregistrement et la mise à jour des utilisateurs</span> <br/>
+                      <span>3. Réservation</span>
+                      </div>
+
+                    </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
+                    data-aos-delay="200"
+                    className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor">
+                  <h6 className="text-gray-50 md:text-lg ">Employé polyvalent</h6>
                   <span className="text-primaryColor text-md">2020 - 2023</span>
                   <p className="text-primaryColor text-md">
                     Gestion des Commandes - Étiquetage - Drive -
@@ -160,11 +198,11 @@ const scrollToTop = () => {
                   </p>
                 </div>
 
-                <div 
-                 data-aos ="fade-up"
-                 data-aos-duration="1500"
-                 data-aos-delay="300"
-                className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor">
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
+                    data-aos-delay="300"
+                    className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor">
                   <h6 className="text-gray-50 md:text-lg ">
                     Stage Technicien informatique
                   </h6>
@@ -176,10 +214,10 @@ const scrollToTop = () => {
                   </p>
                 </div>
                 <div
-                 data-aos ="fade-up"
-                 data-aos-duration="1500"
-                 data-aos-delay="400"
-                className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor">
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
+                    data-aos-delay="400"
+                    className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor">
                   <h6 className="text-gray-50 md:text-lg ">Technicien de maintenance</h6>
                   <span className="text-primaryColor text-md">2015</span>
                   <p className="text-primaryColor text-md">
@@ -194,8 +232,8 @@ const scrollToTop = () => {
         </div>
       </div>
       <button
-      className="btn btn-primary absolute right-5 bottom-5"
-      onClick={scrollToTop}
+          className="btn btn-primary absolute right-5 bottom-5"
+          onClick={scrollToTop}
       ><i className="ri-arrow-up-line text-primaryColor text-3xl"></i></button>
     </section>
   );
