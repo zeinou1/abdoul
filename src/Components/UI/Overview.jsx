@@ -1,10 +1,12 @@
 import {Link} from "react-router-dom";
 import {Typewriter} from "react-simple-typewriter";
 import ME from "../../assets/img-projects/moi.png";
+import cv from "../../assets/data/Abdoul-kader Mohamed zeinoudiniCv.pdf"
 import {useState} from "react";
 
 const Overview = () => {
-    const [Error, setError] = useState(false)
+    const [Error, setError] = useState(cv)
+    console.log(Error)
     return (
         <section className="">
             <div className="container mt-2">
@@ -104,7 +106,7 @@ const Overview = () => {
                                         className="w-full border-2 border-primaryColor p-5 bg-[#2A1612] text-center text lg:text-xl text-primaryColor ">
                                         <button className="transform transition-transform duration-300 hover:scale-105">
                                             <Link to="/resume" className="">
-                                                Compétences techniques
+                                                Compétences techniques !
                                             </Link>
                                         </button>
                                     </div>
@@ -118,12 +120,12 @@ const Overview = () => {
                                         <button className="transform transition-transform duration-300 hover:scale-105">
                       <span className="group:hover:bg-primaryColor hover:text-white">
                               {
-                                  Error ? <Link to="/error">
-
-                                      </Link> :
-                                      <a href="../../assets/data/" download>
+                                  Error ?
+                                      <a href={cv} download>
                                           Récupérer le PDF maintenant !
-                                      </a>
+                                      </a> : <Link to="/error">
+                                                Sorry
+                                      </Link>
                               }
                       </span>
                                         </button>
