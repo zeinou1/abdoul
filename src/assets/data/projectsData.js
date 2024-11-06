@@ -1,13 +1,13 @@
 export const projectsData = [
   {
     id: 1,
-    title: "Kasa",
-    date: "janvier 2024",
-    languages: ["React", "Sass"],
-    infos: "Kasa est un site de location d’appartements entre particuliers",
+    title: "VisitKM",
+    date: "Octobre 2024",
+    languages: ["React", "Redux-Toolkit", "API-Context", "Tailwind Css"],
+    infos: "Un site de réservation d’Appartement en ligne",
     img: "./images/img-projects/kasa2.webp",
     code: "https://github.com/zeinou1/KASA",
-    link: "https://kasa-web.netlify.app/",
+    link: "https://visitmykm.vercel.app/home",
     images: ["./images/img-projects/kasa2.png", "./images/img-projects/kasa3.png"],
     competences: [
       "Base react",
