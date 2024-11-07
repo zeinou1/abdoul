@@ -18,6 +18,7 @@ const navLinks = [
     path: "/resume",
     display: "Competences",
   },
+  
 
 ];
 
