@@ -26,7 +26,7 @@ const Projects = ({ project}) => {
               {" "}
               <p className="lg:text-xl text-gray-50 text-sm md:text-left text-center ">
                 {" "}
-                Téchnologies Utilisés 
+                Téchnologies 
               </p>
               <div className="text-[#F97317] text-md lg:text-sm md:text-left text-center  ">
               

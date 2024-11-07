@@ -8,7 +8,7 @@ const navLinks = [
   },
   {
     path: "/apropos",
-    display: "A propos",
+    display: "À propos",
   },
   {
     path: "/projects-1",
@@ -39,12 +39,17 @@ const Header = () => {
     menuRef.current.classList.toggle("show__menu");
   };
 //!redirection
+  // sticky header on scroll script
+  window.addEventListener("scroll", function () {
+    const header = headerRef.current;
+    header.classList.toggle("menu__sticky", window.scrollY > 0);
+  });
 
 
   return (
-    <header className=" mx-auto pt-[30px] shadow-lg pb-1" ref={headerRef}>
+    <header className="mx-auto pt-[30px] shadow-lg pb-1" ref={headerRef}>
       <div className="container ">
-        <nav className="lg:hidden">
+        <nav className="lg:hidden ">
           <div className="nav__wrapper">
             <div className="navigation  lg:block " ref={menuRef} onClick={displayMenu}>
               <ul className="header__menu relative lg:flex lg:items-center lg:justify-center lg:gap-10">
