@@ -17,8 +17,8 @@ const Project4 = () => {
       <Titre title=" Projet 4"/>
       <main className="">
         
-          <Projects project={project[3]} />
-          <Buttons left="/projects-3" />
+          <Projects project={project[4]} />
+          <Buttons left="/projects-3" right="/projects-5" />
       
       </main>
     </section>

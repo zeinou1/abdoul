@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 const Projects = ({ project}) => {
   return (
     <section id="projects" >
-      <div className="container  ">
+      <div className="container h-auto ">
         <div className="project__wrapper relative ">
+          {/* Partie Project */}
           <div className="flex flex-col  gap-9 lg:gap-4">
             <h2 className="lg:text-2xl text-xl text-center font-bold text-gray-50 underline underline-offset-4 decoration-[#F97317] md:text-left  ">
               {project.title}
@@ -14,21 +15,21 @@ const Projects = ({ project}) => {
               {" "}
               <p className="lg:text-lg text-[16px] md:text-left text-center text-gray-50">
                 {" "}
-                Description -{" "}
+                Description 
               </p>
               <p className="text-[#F97317] text-sm lg:text-md md:text-left text-center">
                 {" "}
-                {project.infos}
+                - {project.infos}
               </p>
             </div>
             <div className="lg:text-2xl mt-2 lg:flex lg:gap-5 lg:items-center">
               {" "}
               <p className="lg:text-xl text-gray-50 text-sm md:text-left text-center ">
                 {" "}
-                Téchnologies Utilisés -{" "}
+                Téchnologies Utilisés 
               </p>
               <div className="text-[#F97317] text-md lg:text-sm md:text-left text-center  ">
-                {" "}
+              
                 {project.languages.map((item) => (
                   <span
                     key={item}
@@ -36,12 +37,13 @@ const Projects = ({ project}) => {
                   
                   "
                   >
-                    {item} -
+                    - {item} 
                   </span>
                 ))}
               </div>
             </div>
           </div>
+          {/* Partie lien code et site */}
           <div
             className="
             
@@ -85,14 +87,14 @@ const Projects = ({ project}) => {
             </div>
           </div>
           <button
-            className="hidden md:block px-7 py-2 border-2 rounded-md border-[#F97317]
+            className="hidden md:block px-7 py-2 border-2 group rounded-md border-[#F97317]
            absolute transform -translate-x-1/2 -translate-y-1/2 
-         left-[50%] top-[440%] hover:bg-yellow-950  hover:text-gray-50
+         left-[50%] bottom-[-500px]  hover:bg-yellow-950  hover:text-gray-50
           "
           >
             <Link
               to="/"
-              className="lg:text-xl font-bold hover:text-gray-50 text-[#F97317] "
+              className="lg:text-xl font-bold group-hover:text-gray-50 text-[#F97317] "
             >
               Home
             </Link>
@@ -100,7 +102,9 @@ const Projects = ({ project}) => {
           <div
             className="absolute transform -translate-x-1/2 -translate-y-1/2 
           right-4  top-1/2"
-          ></div>
+          >
+
+          </div>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ export const projectsData = [
     id: 1,
     title: "VisitKM",
     date: "Octobre 2024",
-    languages: ["React", "Redux-Toolkit", "API-Context", "Tailwind Css"],
+    languages: ["React Vite", "Redux-Toolkit", "API-Context", "Tailwind Css", "Auth"],
     infos: "Un site de réservation d’Appartement en ligne",
     img: "./images/img-projects/kasa2.webp",
     // code: "https://github.com/zeinou1/KASA",
@@ -20,7 +20,7 @@ export const projectsData = [
     id: 2,
     title: "Web agency",
     date: "Septembre 2024",
-    languages: ["TailwindCss", "React"],
+    languages: ["TailwindCss", "React Vite"],
     infos:
       "Un site web d'une société qui offre des solutions en transformation numérique et SEO.",
 
@@ -34,9 +34,8 @@ export const projectsData = [
     id: 3,
     title: "ArgentBank",
     date: "février 2024",
-    languages: ["React", "Redux", "Sass", "API", "Auth", "Token"],
-    infos:
-      "ArgentBank est une application de gestion de compte bancaire.",
+    languages: ["React ", "Redux", "Sass", "API", "Auth", "Token"],
+    infos: "ArgentBank est une application de gestion de compte bancaire.",
     img: "./images/img-projects/argBank1.png",
     // link: "http://www.google.com",
     code: "https://github.com/zeinou1/Bank-online/tree/Phase-Test",
@@ -48,11 +47,25 @@ export const projectsData = [
     title: "Sophie Blue",
     date: "mai 2023",
     languages: ["Javascript(vanilla)", "html", "Css", "API"],
-    infos:
-      "Sophie Blue est une site portofolio, qui permet de stocker ses projets pro",
+    infos: "Sophie Blue est une site portofolio, qui permet de stocker ses projets pro",
     img: "./images/img-projects/sophieBlue1.png",
     // link: "http://www.google.com",
     code: "https://github.com/zeinou1/Projet_N6_OPCR",
+    images: [
+      "./images/img-projects/sophieBlue2.png",
+      "./images/img-projects/SophieBlue3.png",
+    ],
+    competences: ["Base Css", "Animation Css", "Mobile first"],
+  },
+  {
+    id: 5,
+    title: "Portfolio",
+    date: "Octobre 2024",
+    languages: ["React Vite", "TailwindCss"],
+    infos: "My presentation",
+    img: "./images/img-projects/sophieBlue1.png",
+    // link: "http://www.google.com",
+    code: "https://github.com/zeinou1/abdoul",
     images: [
       "./images/img-projects/sophieBlue2.png",
       "./images/img-projects/SophieBlue3.png",

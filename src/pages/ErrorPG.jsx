@@ -12,7 +12,7 @@ const ErrorPG = () => {
                 <div className="max-w-7xl px-[50px] mx-auto lg:block w-[30%]">
                     <img src={error} alt="page not found" className="hidden lg:block "/>
                     <h6 className="text-center pt-10 text-primaryColor">
-                        Sorry I'm comming Back !
+                        Sorry I m comming Back !
                     </h6>
                 </div>
             </div>

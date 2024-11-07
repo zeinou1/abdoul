@@ -3,7 +3,7 @@ import Routers from "../router/Routers"
 
 const Layout = () => {
   return (
-    <div>
+    <div className="">
       <Header/>
       <Routers/>
     </div>
