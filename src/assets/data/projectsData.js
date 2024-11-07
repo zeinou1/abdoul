@@ -6,8 +6,8 @@ export const projectsData = [
     languages: ["React", "Redux-Toolkit", "API-Context", "Tailwind Css"],
     infos: "Un site de réservation d’Appartement en ligne",
     img: "./images/img-projects/kasa2.webp",
-    code: "https://github.com/zeinou1/KASA",
-    link: "https://visitmykm.vercel.app/home",
+    // code: "https://github.com/zeinou1/KASA",
+    link: "https://visitmykm.vercel.app/",
     images: ["./images/img-projects/kasa2.png", "./images/img-projects/kasa3.png"],
     competences: [
       "Base react",

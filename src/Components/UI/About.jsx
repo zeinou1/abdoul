@@ -1,9 +1,9 @@
-import { useState} from "react";
+import { useState,useEffect} from "react";
 
 import Titre from "./Titre";
 const About = () => {
   const [showText, setShowText] = useState(false);
-
+  const [showButton, setShowButton] = useState(false);
   const handleVisibility = () => {
     setShowText(!showText);
   };
@@ -17,6 +17,24 @@ const scrollToTop = () => {
     behavior: "smooth",
   });
 };
+// display btn in scroll
+  const handleScroll = () => {
+    if (window.scrollY > 300) { 
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+
+  
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    // clean composant after scrolling
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section id="about" className="relative">
       <Titre title="À propos " />
@@ -231,10 +249,14 @@ const scrollToTop = () => {
           </div>
         </div>
       </div>
-      <button
-          className="btn btn-primary absolute right-5 bottom-5"
-          onClick={scrollToTop}
-      ><i className="ri-arrow-up-line text-primaryColor text-3xl"></i></button>
+      {showButton && (
+          <button
+              onClick={scrollToTop}
+              className="fixed bottom-5 right-5 bg-primaryColor text-white p-3  shadow-lg hover:bg-blue-600 transition duration-300"
+          >
+            ⬆️
+          </button>
+      )}
     </section>
   );
 };
