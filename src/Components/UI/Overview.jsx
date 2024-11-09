@@ -58,7 +58,7 @@ const Overview = () => {
 
               <div className="border-4 border-primaryColor px-4 py-2 bg-gray-800 shadow-xl transform transition-transform duration-300 hover:scale-105">
                 <p className="text-md text-primaryColor font-semibold text-center">
-                  Je suis un Dev {" "}
+                  Je suis un Dev Junior {" "}
                   <span className="text-[#F97312] text-lg font-bold">
                     {" "}
                     <br />
