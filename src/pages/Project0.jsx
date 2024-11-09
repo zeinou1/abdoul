@@ -10,7 +10,8 @@ const Project0 = () => {
   const [project] = useState(projectsData);
   return (
     <section>
-    <Titre title=" And This Portfolio" />
+    <Titre title={<span className="text-[16px] md:text-xl">And this portfolio</span>} />
+
     <main className="project">
       <Projects project={project[4]} />
       <div>

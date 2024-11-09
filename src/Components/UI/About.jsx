@@ -37,12 +37,11 @@ const About = () => {
       <div className="container">
         <div className="px-2">
           <p className="text-center md:text-left text-lg leading-9 text-primaryColor">
-            Développeur Front-End Junior avec un parcours
-            initial dans le domaine informatique, j&apos;ai entrepris une reconversion
-            pour me spécialiser dans le développement web. <br /> Passionné par la création
-            d&apos;interfaces modernes et performantes, j&apos;ai perfectionné mes
-            compétences sur des technologies comme{" "}
-            <span className="text-gray-50">JavaScript, React, HTML,CSS</span> et{" "}
+            Développeur Front-End Junior avec un parcours initial dans le domaine
+            informatique, j&apos;ai entrepris une reconversion pour me spécialiser dans le
+            développement web. <br /> Passionné par la création d&apos;interfaces modernes
+            et performantes, j&apos;ai perfectionné mes compétences sur des technologies
+            comme <span className="text-gray-50">JavaScript, React, HTML,CSS</span> et{" "}
             <span className="text-gray-50">tailwindcss.</span> En 2024, j&apos;ai validé
             mes compétences chez OpenClassrooms, renforçant ainsi mon expertise dans la
             création d&apos;applications web et l&apos;adoption des meilleures pratiques
@@ -53,14 +52,14 @@ const About = () => {
             className="border-2 border-primaryColor  px-2"
           >
             {setShowText ? (
-              <span className="text-xl text-gray-50">lire la suite</span>
+              <span className="text-xl text-gray-50 text-center">lire la suite</span>
             ) : (
               ""
             )}
           </button>
 
           {showText && (
-            <p className="text-lg text-primaryColor font-bold mt-2 leading-8">
+            <p className="text-lg text-primaryColor font-bold mt-2 leading-8 text-center md:text-left">
               Je suis à la recherche d’une opportunité où je peux contribuer avec mon
               expertise en React tout en continuant à grandir en tant que développeur.
               Prêt à relever de nouveaux défis.
@@ -73,20 +72,20 @@ const About = () => {
             <h3 className="text-gray-50 text-xl">Contact</h3> <br />
             <p className="text-lg">
               {" "}
-              <span className="text-primaryColor">Nom:</span>{" "}
-              <span>Mohamed zeinoudini abdoul-kader</span>
+              <span className="text-primaryColor text-sm md:text-xl">Nom:</span>{" "}
+              <span className="text-sm md:text-xl">Mohamed zeinoudini abdoul-kader</span>
             </p>
             <p className="text-lg mt-3">
               {" "}
               <span className="text-primaryColor">Téléphone:</span>{" "}
-              <span>0768638529</span>
+              <span className="text-sm md:text-xl">0768638529</span>
             </p>
             <p className="text-lg mt-3">
               {" "}
               <span className="text-primaryColor">E-mail:</span>{" "}
               <span>
                 <a href="mailto:zarikader@example.com" className="">
-                  contactmehere@gmail.com
+                  <span className="text-sm md:text-xl">contactmehere@gmail.com</span>
                 </a>
               </span>
             </p>
@@ -106,7 +105,10 @@ const About = () => {
                 <i className="ri-github-fill"></i>
               </span>{" "}
               <span className="pl-2">
-                <a href="https://github.com/zeinou1">Github</a>
+                <a href="https://github.com/zeinou1">
+                  <span className="text-sm md:text-md"></span>
+                  Github
+                </a>
               </span>
               <span className="text-4xl"></span>
             </div>
@@ -115,7 +117,9 @@ const About = () => {
                 <i className="ri-linkedin-fill"></i>
               </span>{" "}
               <span className="pl-2">
-                <a href="https://www.linkedin.com/in/abdoul-kader-mohamed-zeinoudini-474229137/">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/abdoul-kader-mohamed-zeinoudini-474229137/">
+                  LinkedIn
+                </a>
               </span>
               <span className="text-4xl"></span>
             </div>
@@ -257,12 +261,10 @@ const About = () => {
                   <span className="text-primaryColor text-md">2016</span>
                   <p className="text-primaryColor text-md">
                     Gestion et résolution des incidents - Entretien de l&apos;active
-                  
                   </p>
                   <p className="text-primaryColor text-md">
-                  Directory - Installation des machines Windows/Linux - Mise à jour des
-                  machines
-                  
+                    Directory - Installation des machines Windows/Linux - Mise à jour des
+                    machines
                   </p>
                 </div>
                 <div
@@ -275,11 +277,9 @@ const About = () => {
                   <span className="text-primaryColor text-md">2015</span>
                   <p className="text-primaryColor text-md">
                     Installation de postes de travail - Installation d&apos;imprimantes en
-                    
                   </p>
                   <p className="text-primaryColor text-md">
-                  réseau - Maintenance préventive
-                    
+                    réseau - Maintenance préventive
                   </p>
                 </div>
               </div>

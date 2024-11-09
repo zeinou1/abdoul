@@ -7,7 +7,7 @@ export const projectsData = [
     infos: "Un site de réservation d’Appartement en ligne",
     img: "./images/img-projects/kasa2.webp",
     // code: "https://github.com/zeinou1/KASA",
-    link: "https://visitmykm.vercel.app/",
+    link: "https://visitkm.vercel.app/",
     images: ["./images/img-projects/kasa2.png", "./images/img-projects/kasa3.png"],
     competences: [
       "Base react",
@@ -47,7 +47,7 @@ export const projectsData = [
     title: "Sophie Blue",
     date: "mai 2023",
     languages: ["Javascript(vanilla)", "html", "Css", "API"],
-    infos: "Sophie Blue est une site portofolio, qui permet de stocker ses projets pro",
+    infos: "Sophie Blue est une application web portofolio, qui permet de stocker ses projets pro",
     img: "./images/img-projects/sophieBlue1.png",
     // link: "http://www.google.com",
     code: "https://github.com/zeinou1/Projet_N6_OPCR",
