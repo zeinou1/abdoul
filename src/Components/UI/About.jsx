@@ -36,7 +36,7 @@ const About = () => {
       <Titre title="À propos " />
       <div className="container">
         <div className="px-2">
-          <p className="text-center md:text-left text-lg leading-9 text-primaryColor">
+          <p className="text-center md:text-left  leading-10 text-primaryColor md:text-xl text-sm">
             Développeur Front-End Junior avec un parcours initial dans le domaine
             informatique, j&apos;ai entrepris une reconversion pour me spécialiser dans le
             développement web. <br /> Passionné par la création d&apos;interfaces modernes
@@ -52,14 +52,14 @@ const About = () => {
             className="border-2 border-primaryColor  px-2"
           >
             {setShowText ? (
-              <span className="text-xl text-gray-50 text-center">lire la suite</span>
+              <span className="md:text-xl text-sm text-gray-50 text-center">lire la suite</span>
             ) : (
               ""
             )}
           </button>
 
           {showText && (
-            <p className="text-lg text-primaryColor font-bold mt-2 leading-8 text-center md:text-left">
+            <p className="md:text-xl text-sm text-primaryColor font-bold mt-2 leading-8 text-center md:text-left">
               Je suis à la recherche d’une opportunité où je peux contribuer avec mon
               expertise en React tout en continuant à grandir en tant que développeur.
               Prêt à relever de nouveaux défis.
@@ -69,7 +69,7 @@ const About = () => {
         {/* End à propos */}
         <div className="contact mt-24">
           <div className="contact__info flex flex-col  justify-center">
-            <h3 className="text-gray-50 text-xl">Contact</h3> <br />
+            <h3 className="text-gray-50 md:text-xl text-sm">Contact</h3> <br />
             <p className="text-lg">
               {" "}
               <span className="text-primaryColor text-sm md:text-xl">Nom:</span>{" "}
@@ -128,7 +128,7 @@ const About = () => {
 
         {/* End contact */}
         <div className="formation mt-24">
-          <h3 className="text-gray-50 text-xl">Formation et diplôme</h3> <br />
+          <h3 className="text-gray-50 md:text-xl text-sm">Formation et diplôme</h3> <br />
           <div className="formation__wrapper">
             <div className="formation__content">
               <div className="formation__group flex flex-col justify-center gap-7">
@@ -138,9 +138,9 @@ const About = () => {
                   data-aos-delay="200"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-lg ">Intégrateur Web / react</h6>
-                  <p className="text-primaryColor text-md">OpenClassrooms / paris</p>
-                  <span className="text-primaryColor text-md">2023 - 2024</span>
+                  <h6 className="text-gray-50 md:text-xl text-sm ">Intégrateur Web / react</h6>
+                  <p className="text-primaryColor md:text-xl text-sm">OpenClassrooms / paris</p>
+                  <span className="text-primaryColor md:text-xl text-sm">2023 - 2024</span>
                 </div>
 
                 <div
@@ -149,11 +149,11 @@ const About = () => {
                   data-aos-delay="300"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-lg ">
+                  <h6 className="text-gray-50 md:text-xl text-sm ">
                     Valorisation des usages numériques
                   </h6>
-                  <p className="text-primaryColor text-md">Université Paris 8</p>
-                  <span className="text-primaryColor text-md">2019 - 2020</span>
+                  <p className="text-primaryColor md:text-xl text-sm">Université Paris 8</p>
+                  <span className="text-primaryColor md:text-xl text-sm">2019 - 2020</span>
                 </div>
 
                 <div
@@ -162,9 +162,9 @@ const About = () => {
                   data-aos-delay="400"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-lg ">Réseau informatique</h6>
-                  <p className="text-primaryColor text-md">ISI Dakar / Sénégal</p>
-                  <span className="text-primaryColor text-md">2015- 2016</span>
+                  <h6 className="text-gray-50 md:text-xl text-sm">Réseau informatique</h6>
+                  <p className="text-primaryColor md:text-xl text-sm">ISI Dakar / Sénégal</p>
+                  <span className="text-primaryColor md:text-xl text-sm">2015- 2016</span>
                 </div>
               </div>
             </div>
@@ -173,7 +173,7 @@ const About = () => {
         {/* End formation */}
         {/* Experience */}
         <div className="formation mt-24">
-          <h3 className="text-gray-50 text-xl">Expériences professionnelles</h3> <br />
+          <h3 className="text-gray-50 md:text-xl text-sm">Expériences professionnelles</h3> <br />
           <div className="formation__wrapper">
             <div className="formation__content">
               <div className="formation__group flex flex-col justify-center gap-7">
@@ -183,29 +183,29 @@ const About = () => {
                   data-aos-delay="200"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-lg ">Projet personnel</h6>
+                  <h6 className="text-gray-50 md:text-xl text-sm">Projet personnel</h6>
                   <div
                     className="lg:flex  lg:gap-10 lg:flex-row flex flex-col gap-4
                   "
                   >
                     <h6>
                       VisitKM :{" "}
-                      <span> Un site de réservation d’Appartement en ligne</span>
+                      <span className="md:text-xl  text-sm"> Est Un site de réservation d’Appartement en ligne</span>
                     </h6>
-                    <span className="text-primaryColor text-md">2020 - 2023</span>
+                    <span className="text-primaryColor md:text-xl text-sm">2020 - 2023</span>
                   </div>
-                  <div className="text-primaryColor text-md">
+                  <div className="text-primaryColor md:text-xl text-sm">
                     <div>
-                      <h6 className="text-gray-600 font-bold">Technologies:</h6>
+                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">Technologies:</h6>
                       <br />
-                      <span>React, Redux-Toolkit, API-Context, Tailwind Css</span>
+                      <span className="md:text-xl text-sm">React, Redux-Toolkit, API-Context, Tailwind Css</span>
                     </div>
                   </div>
                   <div className="text-primaryColor text-md">
                     <div>
-                      <h6 className="text-gray-600 font-bold">Rôle</h6>
+                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">Rôle</h6>
                       <br />
-                      <span>
+                      <span className="md:text-xl text-sm">
                         Création d interfaces utilisateurs, gestion de l'état avec Redux
                         Toolkit
                       </span>
@@ -213,21 +213,21 @@ const About = () => {
                   </div>
                   <div className="text-primaryColor text-md">
                     <div>
-                      <h6 className="text-gray-600 font-bold"> Fonctionnalités:</h6>
+                      <h6 className="text-gray-600 font-bold md:text-xl text-sm"> Fonctionnalités:</h6>
                       <br />
                       <span>
                         <div className="flex flex-col gap-2">
-                          <span>
+                          <span className="md:text-xl text-sm">
                             1. Intégré des API pour gérer l'authentification des
                             utilisateurs Par (Token)
                           </span>{" "}
                           <br />
-                          <span>
+                          <span className="md:text-xl text-sm">
                             2. L’ajout d’appartement, L’enregistrement et la mise à jour
                             des utilisateurs
                           </span>{" "}
                           <br />
-                          <span>3. Réservation</span>
+                          <span className="md:text-xl text-sm">3. Réservation</span>
                         </div>
                       </span>
                     </div>
@@ -239,12 +239,12 @@ const About = () => {
                   data-aos-delay="200"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-lg ">Employé polyvalent</h6>
-                  <span className="text-primaryColor text-md">2020 - 2023</span>
-                  <p className="text-primaryColor text-md">
+                  <h6 className="text-gray-50 md:text-xl text-sm ">Employé polyvalent</h6>
+                  <span className="text-primaryColor md:text-xl text-sm">2020 - 2023</span>
+                  <p className="text-primaryColor md:text-xl text-sm">
                     Résolution de problèmes, Travail en équipe, Rigueur, Contact-client
                   </p>
-                  <p className="text-primaryColor text-md">
+                  <p className="text-primaryColor md:text-xl text-sm">
                     Gestion des Commandes - Étiquetage - Drive - Inventaire
                   </p>
                 </div>
@@ -255,14 +255,14 @@ const About = () => {
                   data-aos-delay="300"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-lg ">
+                  <h6 className="text-gray-50 md:text-xl text-sm">
                     Stage Technicien informatique
                   </h6>
-                  <span className="text-primaryColor text-md">2016</span>
-                  <p className="text-primaryColor text-md">
+                  <span className="text-primaryColor md:text-xl text-sm">2016</span>
+                  <p className="text-primaryColor md:text-xl text-sm">
                     Gestion et résolution des incidents - Entretien de l&apos;active
                   </p>
-                  <p className="text-primaryColor text-md">
+                  <p className="text-primaryColor md:text-xl text-sm">
                     Directory - Installation des machines Windows/Linux - Mise à jour des
                     machines
                   </p>
@@ -273,12 +273,12 @@ const About = () => {
                   data-aos-delay="400"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-lg ">Technicien de maintenance</h6>
-                  <span className="text-primaryColor text-md">2015</span>
-                  <p className="text-primaryColor text-md">
+                  <h6 className="text-gray-50 md:text-xl text-sm ">Technicien de maintenance</h6>
+                  <span className="text-primaryColor md:text-xl text-sm">2015</span>
+                  <p className="text-primaryColor md:text-xl text-sm">
                     Installation de postes de travail - Installation d&apos;imprimantes en
                   </p>
-                  <p className="text-primaryColor text-md">
+                  <p className="text-primaryColor md:text-xl text-sm">
                     réseau - Maintenance préventive
                   </p>
                 </div>

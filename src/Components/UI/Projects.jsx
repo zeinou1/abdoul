@@ -8,23 +8,23 @@ const Projects = ({ project}) => {
         <div className="project__wrapper relative ">
           {/* Partie Project */}
           <div className="flex flex-col  gap-9 lg:gap-4">
-            <h2 className="lg:text-2xl text-xl text-center font-bold text-gray-50 underline underline-offset-4 decoration-[#F97317] md:text-left  ">
+            <h2 className="md:text-xl text-sm text-center font-bold text-gray-50 underline underline-offset-4 decoration-[#F97317] md:text-left  ">
               {project.title}
             </h2>
             <div className="text-xl lg:mt-2 lg:flex lg:gap-5 lg:items-center overflow-hidden">
               {" "}
-              <p className="lg:text-lg text-[16px] md:text-left text-center text-gray-50">
+              <p className="md:text-xl text-sm leading-8 md:text-left text-center text-gray-50">
                 {" "}
                 Description 
               </p>
-              <p className="text-[#F97317] text-sm lg:text-md md:text-left text-center">
+              <p className="text-[#F97317] md:text-md text-sm leading-8 md:text-left text-center">
                 {" "}
                 - {project.infos}
               </p>
             </div>
-            <div className="lg:text-2xl mt-2 lg:flex lg:gap-5 lg:items-center">
+            <div className=" mt-2 lg:flex lg:gap-5 lg:items-center">
               {" "}
-              <p className="lg:text-xl text-gray-50 text-sm md:text-left text-center ">
+              <p className="md:text-xl text-sm text-gray-50  md:text-left text-center ">
                 {" "}
                 Téchnologies 
               </p>
@@ -34,6 +34,7 @@ const Projects = ({ project}) => {
                   <span
                     key={item}
                     className="pl-3 
+                    md:text-md text-sm leading-8 md:text-left text-center
                   
                   "
                   >

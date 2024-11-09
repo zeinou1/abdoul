@@ -10,10 +10,10 @@ const Resume = () => {
   };
   return (
     <section id="cpt" className="relative">
-      <Titre title="Compétences" />
+      <Titre title={<span className="md:text-xl text-sm">Compétences</span>} />
       <div className="container ">
         <div className="text-center">
-          <h2 className="text-gray-50 font-[800] lg:text-[2.4rem] text-xl mb-4">
+          <h2 className="text-gray-50 font-[800] lg:text-[2.4rem] md:text-xl text-sm mb-4">
             Front-End
           </h2>
         </div>
@@ -40,11 +40,11 @@ const Resume = () => {
                        text-gray-200
                         bg-gray-900 p-4 rounded shadow group cursor-pointer ease-in duration-150 "
                       >
-                        <p className="text-md  group-hover:font-[500] leading-7">
+                        <p className="md:text-xl text-sm group-hover:font-[500] leading-7">
                           <ul>
-                            <li>Implémenter une interface responsive avec HTML et CSS</li>
+                            <li className="md:text-xl text-sm leading-8">Implémenter une interface responsive avec HTML et CSS</li>
                             <br />
-                            <li>
+                            <li className="md:text-xl text-sm leading-8">
                               Intégrer du contenu conformément à une maquette avec HTML et
                               CSS
                             </li>
@@ -84,9 +84,9 @@ const Resume = () => {
                       >
                         <p className="text-md pt-4 group-hover:font-[500] leading-7 group-hover:text-white">
                           <ul>
-                            <li>Gérer les événements </li>
+                            <li className="md:text-xl text-sm leading-8">Gérer les événements </li>
                             <br />
-                            <li>
+                            <li className="md:text-xl text-sm leading-8">
                               Manipuler les éléments du DOM avec JavaScript Récupérer les
                               données utilisateurs dans le JavaScript via des formulaires
                             </li>
@@ -123,15 +123,15 @@ const Resume = () => {
                         <p className="text-[15px] text-smallTextColor group-hover:text-white group-hover:font-[500] leading-7">
                           <ul>
                             <ul>
-                              <h6>Les hooks</h6>
-                              <li className="text-primaryColor">useState</li>
-                              <li className="text-primaryColor">useEffect</li>
-                              <li className="text-primaryColor">useContext...</li>
+                              <h6 className="md:text-xl text-sm leading-8">Les hooks</h6>
+                              <li className="text-primaryColor md:text-xl text-sm leading-8">useState</li>
+                              <li className="text-primaryColor md:text-xl text-sm leading-8">useEffect</li>
+                              <li className="text-primaryColor md:text-xl text-sm leading-8">useContext...</li>
                               <li>Etat Global</li>
-                              <li className="text-primaryColor">Api context</li>
-                              <li className="text-primaryColor">Redux Toolkit...</li>
+                              <li className="text-primaryColor md:text-xl text-sm leading-8">Api context</li>
+                              <li className="text-primaryColor md:text-xl text-sm leading-8">Redux Toolkit...</li>
                               <li>Test</li>
-                              <li className="text-primaryColor">Unitaires...</li>
+                              <li className="text-primaryColor md:text-xl text-sm leading-8">Unitaires...</li>
                             </ul>
                           </ul>
                         </p>
@@ -161,34 +161,34 @@ const Resume = () => {
                         data-aos-delay="300"
                         className="bg-gray-900  border-4 border-primaryColor p-4 rounded shadow group  cursor-pointer ease-in duration-150 text-gray-50 "
                       >
-                        <h3 className="font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
+                        <h3 className="md:text-xl text-sm leading-8 font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
                           {" "}
                           Divers..
                         </h3>
                         <p className="text-[15px] text-smallTextColor group-hover:text-white group-hover:font-[500] leading-7">
                           <ul>
-                            <li className="text-primaryColor">- SEO</li>
-                            <li className="text-primaryColor">- Debug</li>
-                            <li className="text-primaryColor">- API rest</li>
+                            <li className="text-primaryColor md:text-xl text-sm leading-8">- SEO</li>
+                            <li className="text-primaryColor md:text-xl text-sm leading-8">- Debug</li>
+                            <li className="text-primaryColor md:text-xl text-sm leading-8">- API rest</li>
                           </ul>
                         </p>
-                        <h3 className="font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
+                        <h3 className="md:text-xl text-sm leading-8 font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
                           {" "}
                           Méthedologies...
                         </h3>
                         <p className="lg:text-[15px] text-sm text-smallTextColor group-hover:text-white group-hover:font-[500] leading-7">
                           <ul>
-                            <li className="text-primaryColor">- Agile</li>
+                            <li className="text-primaryColor md:text-xl text-sm leading-8">- Agile</li>
                           </ul>
                         </p>
-                        <h3 className="font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
+                        <h3 className="md:text-xl text-sm leading-8 font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
                           {" "}
                           Outils Dev..
                         </h3>
                         <ul>
-                          <li className="text-primaryColor">- Vscode</li>
-                          <li className="text-primaryColor">- Git</li>
-                          <li className="text-primaryColor">- WebStorm</li>
+                          <li className="text-primaryColor md:text-xl text-sm leading-8">- Vscode</li>
+                          <li className="text-primaryColor md:text-xl text-sm leading-8">- Git</li>
+                          <li className="text-primaryColor md:text-xl text-sm leading-8">- WebStorm</li>
                         </ul>
                       </div>
                     </div>
@@ -216,8 +216,8 @@ const Resume = () => {
         <i className="ri-arrow-up-line"></i>
       </button>
       {/* End resume */}
-      <div className="flex flex-col items-center justify-center text-center ">
-        <p className=" text-sm lg:max-w-[600] lg:mx-auto text-primaryColor font-[500] lg:text-[16px] leading-7">
+      <div className="flex flex-col items-center justify-center text-center px-2 sm:px-0 ">
+        <p className=" md:text-xl text-sm leading-8 lg:max-w-[600] lg:mx-auto text-primaryColor font-[500] ">
           Je suis aussi motivé qu&apos;un{" "}
           <span className="text-blue-700 animate-pulse">useEffect</span> sans dépendances,
           toujours prêt à se déclencher !&quot; <br />
