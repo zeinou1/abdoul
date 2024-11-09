@@ -244,7 +244,7 @@ const About = () => {
                   <h6 className="text-gray-50 md:text-xl text-sm ">Employé polyvalent</h6>
                   <span className="text-primaryColor md:text-xl text-sm">2020 - 2023</span>
                   <p className="text-primaryColor md:text-xl text-sm">
-                    Résolution de problèmes, Travail en équipe, Rigueur, Contact-client
+                    Résolution de problèmes, Travail en équipe, Rigueur, relation client
                   </p>
                   <p className="text-primaryColor md:text-xl text-sm">
                     Gestion des Commandes - Étiquetage - Drive - Inventaire
