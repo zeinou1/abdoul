@@ -58,12 +58,12 @@ const Overview = () => {
 
               <div className="border-4 border-primaryColor px-4 py-2 bg-gray-800 shadow-xl transform transition-transform duration-300 hover:scale-105">
                 <p className="text-md text-primaryColor font-semibold text-center">
-                  Je suis développeur Web juni{" "}
+                  Je suis un Dev {" "}
                   <span className="text-[#F97312] text-lg font-bold">
                     {" "}
                     <br />
                     <Typewriter
-                      words={["Front-end", "React"]}
+                      words={["Front-end", "React","JavaScript"]}
                       loop
                       cursor
                       cursorStyle="|"
