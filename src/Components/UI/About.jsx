@@ -194,7 +194,7 @@ const About = () => {
                       VisitKM :{" "}
                       <span className="md:text-xl  text-sm"> Est Un site de réservation d’Appartement en ligne</span>
                     </h6>
-                    <span className="text-primaryColor md:text-xl text-sm">2020 - 2023</span>
+                    <span className="text-primaryColor md:text-xl text-sm">Octobre - 2024</span>
                   </div>
                   <div className="text-primaryColor md:text-xl text-sm">
                     <div>
