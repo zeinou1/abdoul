@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
-import ME from "../../assets/img-projects/moi.png";
-import cv from "../../assets/data/Abdoul-kader Mohamed zeinoudiniCv.pdf";
+import ME from "../../assets/img-projects/me.jpg";
+import cv from "../../assets/data/Mohamed.pdf";
 import { useState } from "react";
 
 const Overview = () => {
@@ -18,7 +18,7 @@ const Overview = () => {
                   <img
                     src={ME}
                     alt="photo for me"
-                    className="max-w-full max-h-full rounded-full"
+                    className="w-44 h-44 object-cover max-w-full max-h-full rounded-full"
                   />
                 </div>
                 <div className="absolute inset-0 border-4 ring-2 ring-primaryColor border-primaryColor rounded-full animate-pulse"></div>
@@ -58,7 +58,7 @@ const Overview = () => {
 
               <div className="border-4 border-primaryColor px-4 py-2 bg-gray-800 shadow-xl transform transition-transform duration-300 hover:scale-105">
                 <p className="text-md text-primaryColor font-semibold text-center">
-                  Je suis développeur Web{" "}
+                  Je suis développeur Web juni{" "}
                   <span className="text-[#F97312] text-lg font-bold">
                     {" "}
                     <br />

@@ -37,10 +37,9 @@ const About = () => {
       <div className="container">
         <div className="px-2">
           <p className="text-center md:text-left text-lg leading-9 text-primaryColor">
-            <span className="text-gray-50">Lover de </span>{" "}
-            <span className="text-blue-700 animate-pulse">React</span> Avec un parcours
+            Développeur Front-End Junior avec un parcours
             initial dans le domaine informatique, j&apos;ai entrepris une reconversion
-            pour me spécialiser dans le développement web. Passionné par la création
+            pour me spécialiser dans le développement web. <br /> Passionné par la création
             d&apos;interfaces modernes et performantes, j&apos;ai perfectionné mes
             compétences sur des technologies comme{" "}
             <span className="text-gray-50">JavaScript, React, HTML,CSS</span> et{" "}
@@ -93,7 +92,7 @@ const About = () => {
             </p>
           </div>
           <div className="social__network">
-            <div>
+            {/* <div>
               <span className="text-gray-50 text-5xl ">
                 <i className="ri-facebook-fill"></i>
               </span>{" "}
@@ -101,13 +100,13 @@ const About = () => {
                 <a href="/">Facebook</a>
               </span>
               <span className="text-4xl"></span>
-            </div>
+            </div> */}
             <div>
               <span className="text-gray-50 text-5xl ">
                 <i className="ri-github-fill"></i>
               </span>{" "}
               <span className="pl-2">
-                <a href="/">Github</a>
+                <a href="https://github.com/zeinou1">Github</a>
               </span>
               <span className="text-4xl"></span>
             </div>
@@ -116,7 +115,7 @@ const About = () => {
                 <i className="ri-linkedin-fill"></i>
               </span>{" "}
               <span className="pl-2">
-                <a href="/">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/abdoul-kader-mohamed-zeinoudini-474229137/">LinkedIn</a>
               </span>
               <span className="text-4xl"></span>
             </div>
