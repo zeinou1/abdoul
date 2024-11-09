@@ -11,7 +11,7 @@ const Project3 = () => {
 
   return (
     <section>
-      <Titre title={<span className="md:text-xl text-sm">Projet 3</span>} />
+      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">Projet 3</span>} />
       <main className="">
        
           <Projects project={project[2]} />

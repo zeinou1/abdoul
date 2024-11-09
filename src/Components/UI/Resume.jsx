@@ -10,7 +10,7 @@ const Resume = () => {
   };
   return (
     <section id="cpt" className="relative">
-      <Titre title={<span className="md:text-xl text-sm">Compétences</span>} />
+      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">Compétences</span>} />
       <div className="container ">
         <div className="text-center">
           <h2 className="text-gray-50 font-[800] lg:text-[2.4rem] md:text-xl text-sm mb-4">

@@ -33,7 +33,9 @@ const About = () => {
 
   return (
     <section id="about" className="relative">
-      <Titre title="À propos " />
+      <Titre 
+      title={<span className="md:text-xl lg:text-3xl text-sm">À propos </span>}
+      />
       <div className="container">
         <div className="px-2">
           <p className="text-center md:text-left  leading-10 text-primaryColor md:text-xl text-sm">
@@ -150,9 +152,9 @@ const About = () => {
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
                   <h6 className="text-gray-50 md:text-xl text-sm ">
-                    Valorisation des usages numériques
+                  Master Valorisation des usages numériques
                   </h6>
-                  <p className="text-primaryColor md:text-xl text-sm">Université Paris 8</p>
+                  <p className="text-primaryColor md:text-xl text-sm"> Université Paris 8</p>
                   <span className="text-primaryColor md:text-xl text-sm">2019 - 2020</span>
                 </div>
 
@@ -162,7 +164,7 @@ const About = () => {
                   data-aos-delay="400"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-xl text-sm">Réseau informatique</h6>
+                  <h6 className="text-gray-50 md:text-xl text-sm">Licence Réseau informatique</h6>
                   <p className="text-primaryColor md:text-xl text-sm">ISI Dakar / Sénégal</p>
                   <span className="text-primaryColor md:text-xl text-sm">2015- 2016</span>
                 </div>
