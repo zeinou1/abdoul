@@ -225,8 +225,11 @@ const About = () => {
                           </span>{" "}
                           <br />
                           <span className="md:text-xl text-sm">
-                            2. L’ajout d’appartement, L’enregistrement et la mise à jour
-                            des utilisateurs
+                            2. L’ajout d’appartement et la mise à jour des appartements, 
+                          </span>{" "}
+                          <span className="md:text-xl text-sm">
+                            3. L’enregistrement et la mise à jour
+                            des utilisateurs 
                           </span>{" "}
                           <br />
                           <span className="md:text-xl text-sm">3. Réservation</span>
