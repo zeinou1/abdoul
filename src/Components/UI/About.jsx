@@ -223,14 +223,18 @@ const About = () => {
                           </span>{" "}
                           <br />
                           <span className="md:text-xl text-sm">
-                            2. L’ajout d’appartement et la mise à jour , 
+                            2. Récupération du profil utilisateur via (ID)
+                          </span>{" "}
+                          <br />
+                          <span className="md:text-xl text-sm">
+                            3. L’ajout d’appartement et la mise à jour , 
                           </span>{" "}
                           <span className="md:text-xl text-sm">
-                            3. L’enregistrement et la mise à jour
+                            4. L’enregistrement et la mise à jour
                             des utilisateurs 
                           </span>{" "}
                           <br />
-                          <span className="md:text-xl text-sm">3. Réservation</span>
+                          <span className="md:text-xl text-sm">5. Réservation</span>
                         </div>
                       </span>
                     </div>
