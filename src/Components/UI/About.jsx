@@ -62,9 +62,7 @@ const About = () => {
 
           {showText && (
             <p className="md:text-xl text-sm text-primaryColor font-bold mt-2 leading-8 text-center md:text-left">
-              Je suis à la recherche d’une opportunité où je peux contribuer avec mon
-              expertise en React tout en continuant à grandir en tant que développeur.
-              Prêt à relever de nouveaux défis.
+             Je suis à la recherche d’une opportunité avec laquelle je peux contribuer avec mon expertise en React tout en continuant à grandir en tant que développeur. Prêt à relever de nouveaux défis.
             </p>
           )}
         </div>
