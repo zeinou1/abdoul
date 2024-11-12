@@ -33,9 +33,7 @@ const About = () => {
 
   return (
     <section id="about" className="relative">
-      <Titre 
-      title={<span className="md:text-xl lg:text-3xl text-sm">À propos </span>}
-      />
+      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">À propos </span>} />
       <div className="container">
         <div className="px-2">
           <p className="text-center md:text-left  leading-10 text-primaryColor md:text-xl text-sm">
@@ -54,7 +52,9 @@ const About = () => {
             className="border-2 border-primaryColor  px-2"
           >
             {setShowText ? (
-              <span className="md:text-xl text-sm text-gray-50 text-center">lire la suite</span>
+              <span className="md:text-xl text-sm text-gray-50 text-center">
+                lire la suite
+              </span>
             ) : (
               ""
             )}
@@ -62,7 +62,9 @@ const About = () => {
 
           {showText && (
             <p className="md:text-xl text-sm text-primaryColor font-bold mt-2 leading-8 text-center md:text-left">
-             Je suis à la recherche d’une opportunité avec laquelle je peux contribuer avec mon expertise en React tout en continuant à grandir en tant que développeur. Prêt à relever de nouveaux défis.
+              Je suis à la recherche d’une opportunité avec laquelle je peux contribuer
+              avec mon expertise en React tout en continuant à grandir en tant que
+              développeur. Prêt à relever de nouveaux défis.
             </p>
           )}
         </div>
@@ -138,9 +140,15 @@ const About = () => {
                   data-aos-delay="200"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-xl text-sm ">Intégrateur Web / react</h6>
-                  <p className="text-primaryColor md:text-xl text-sm">OpenClassrooms / paris</p>
-                  <span className="text-primaryColor md:text-xl text-sm">2023 - 2024</span>
+                  <h6 className="text-gray-50 md:text-xl text-sm ">
+                    Intégrateur Web / react
+                  </h6>
+                  <p className="text-primaryColor md:text-xl text-sm">
+                    OpenClassrooms / paris
+                  </p>
+                  <span className="text-primaryColor md:text-xl text-sm">
+                    2023 - 2024
+                  </span>
                 </div>
 
                 <div
@@ -150,10 +158,15 @@ const About = () => {
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
                   <h6 className="text-gray-50 md:text-xl text-sm ">
-                  Master Valorisation des usages numériques
+                    Master Valorisation des usages numériques
                   </h6>
-                  <p className="text-primaryColor md:text-xl text-sm"> Université Paris 8</p>
-                  <span className="text-primaryColor md:text-xl text-sm">2019 - 2020</span>
+                  <p className="text-primaryColor md:text-xl text-sm">
+                    {" "}
+                    Université Paris 8
+                  </p>
+                  <span className="text-primaryColor md:text-xl text-sm">
+                    2019 - 2020
+                  </span>
                 </div>
 
                 <div
@@ -162,8 +175,12 @@ const About = () => {
                   data-aos-delay="400"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-xl text-sm">Licence Réseau informatique</h6>
-                  <p className="text-primaryColor md:text-xl text-sm">ISI Dakar / Sénégal</p>
+                  <h6 className="text-gray-50 md:text-xl text-sm">
+                    Licence Réseau informatique
+                  </h6>
+                  <p className="text-primaryColor md:text-xl text-sm">
+                    ISI Dakar / Sénégal
+                  </p>
                   <span className="text-primaryColor md:text-xl text-sm">2015- 2016</span>
                 </div>
               </div>
@@ -173,7 +190,10 @@ const About = () => {
         {/* End formation */}
         {/* Experience */}
         <div className="formation mt-24">
-          <h3 className="text-gray-50 md:text-xl text-sm">Expériences professionnelles</h3> <br />
+          <h3 className="text-gray-50 md:text-xl text-sm">
+            Expériences professionnelles
+          </h3>{" "}
+          <br />
           <div className="formation__wrapper">
             <div className="formation__content">
               <div className="formation__group flex flex-col justify-center gap-7">
@@ -190,15 +210,24 @@ const About = () => {
                   >
                     <h6>
                       VisitKM :{" "}
-                      <span className="md:text-xl  text-sm"> Est Un site de réservation d’Appartement en ligne</span>
+                      <span className="md:text-xl  text-sm">
+                        {" "}
+                        Est Un site de réservation d’Appartement en ligne
+                      </span>
                     </h6>
-                    <span className="text-primaryColor md:text-xl text-sm">Octobre - 2024</span>
+                    <span className="text-primaryColor md:text-xl text-sm">
+                      Octobre - 2024
+                    </span>
                   </div>
                   <div className="text-primaryColor md:text-xl text-sm">
                     <div>
-                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">Technologies:</h6>
+                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">
+                        Technologies:
+                      </h6>
                       <br />
-                      <span className="md:text-xl text-sm">React, Redux-Toolkit, API-Context, Tailwind Css</span>
+                      <span className="md:text-xl text-sm">
+                        React, Redux-Toolkit, API-Context, Tailwind Css
+                      </span>
                     </div>
                   </div>
                   <div className="text-primaryColor text-md">
@@ -213,7 +242,10 @@ const About = () => {
                   </div>
                   <div className="text-primaryColor text-md">
                     <div>
-                      <h6 className="text-gray-600 font-bold md:text-xl text-sm"> Fonctionnalités:</h6>
+                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">
+                        {" "}
+                        Fonctionnalités:
+                      </h6>
                       <br />
                       <span>
                         <div className="flex flex-col gap-2">
@@ -223,15 +255,14 @@ const About = () => {
                           </span>{" "}
                           <br />
                           <span className="md:text-xl text-sm">
-                            2. Récupération du profil utilisateur via (ID)
+                            2. L’enregistrement et la mise à jour des utilisateurs
+                          </span>{" "}
+                          <span className="md:text-xl text-sm">
+                            3. Récupération du profil utilisateur via (ID)
                           </span>{" "}
                           <br />
                           <span className="md:text-xl text-sm">
-                            3. L’ajout d’appartement et la mise à jour , 
-                          </span>{" "}
-                          <span className="md:text-xl text-sm">
-                            4. L’enregistrement et la mise à jour
-                            des utilisateurs 
+                            4. L’ajout d’appartement et la mise à jour ,
                           </span>{" "}
                           <br />
                           <span className="md:text-xl text-sm">5. Réservation</span>
@@ -247,7 +278,9 @@ const About = () => {
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
                   <h6 className="text-gray-50 md:text-xl text-sm ">Employé polyvalent</h6>
-                  <span className="text-primaryColor md:text-xl text-sm">2020 - 2023</span>
+                  <span className="text-primaryColor md:text-xl text-sm">
+                    2020 - 2023
+                  </span>
                   <p className="text-primaryColor md:text-xl text-sm">
                     Résolution de problèmes, Travail en équipe, Rigueur, relation client
                   </p>
@@ -280,7 +313,9 @@ const About = () => {
                   data-aos-delay="400"
                   className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
                 >
-                  <h6 className="text-gray-50 md:text-xl text-sm ">Technicien de maintenance</h6>
+                  <h6 className="text-gray-50 md:text-xl text-sm ">
+                    Technicien de maintenance
+                  </h6>
                   <span className="text-primaryColor md:text-xl text-sm">2015</span>
                   <p className="text-primaryColor md:text-xl text-sm">
                     Installation de postes de travail - Installation d&apos;imprimantes en
