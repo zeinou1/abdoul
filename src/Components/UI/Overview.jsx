@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import ME from "../../assets/img-projects/me.jpg";
-import cv from "../../assets/data/CV_Abdoul-Kader.pdf";
+import cv from "../../assets/data/cv.pdf";
 import { useState } from "react";
 
 const Overview = () => {
