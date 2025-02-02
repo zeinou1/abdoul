@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Projects = ({ project}) => {
+const Projects = ({ project }) => {
   return (
-    <section id="projects" >
+    <section id="projects" className="min-h-screen">
       <div className="container h-auto ">
         <div className="project__wrapper relative ">
           {/* Partie Project */}
@@ -15,7 +15,7 @@ const Projects = ({ project}) => {
               {" "}
               <p className="md:text-xl text-sm leading-8 md:text-left text-center text-gray-50">
                 {" "}
-                Description 
+                Description
               </p>
               <p className="text-[#F97317] md:text-md text-sm leading-8 md:text-left text-center">
                 {" "}
@@ -26,10 +26,9 @@ const Projects = ({ project}) => {
               {" "}
               <p className="md:text-xl text-sm text-gray-50  md:text-left text-center ">
                 {" "}
-                Téchnologies 
+                Téchnologies
               </p>
               <div className="text-[#F97317] text-md lg:text-sm md:text-left text-center  ">
-              
                 {project.languages.map((item) => (
                   <span
                     key={item}
@@ -38,7 +37,7 @@ const Projects = ({ project}) => {
                   
                   "
                   >
-                    - {item} 
+                    - {item}
                   </span>
                 ))}
               </div>
@@ -103,9 +102,7 @@ const Projects = ({ project}) => {
           <div
             className="absolute transform -translate-x-1/2 -translate-y-1/2 
           right-4  top-1/2"
-          >
-
-          </div>
+          ></div>
         </div>
       </div>
     </section>

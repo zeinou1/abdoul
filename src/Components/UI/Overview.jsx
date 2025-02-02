@@ -8,7 +8,7 @@ const Overview = () => {
   const [Error, setError] = useState(cv);
   console.log(Error);
   return (
-    <section className="">
+    <section className="min-h-screen flex items-center justify-center">
       <div className="container mt-2">
         <div className="over__wrapper">
           <div className="over__info lg:flex lg:flex-row flex flex-col  gap-10 ">
