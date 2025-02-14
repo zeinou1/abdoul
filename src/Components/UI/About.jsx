@@ -37,15 +37,17 @@ const About = () => {
       <div className="container">
         <div className="px-2">
           <p className="text-center md:text-left  leading-10 text-primaryColor md:text-xl text-sm">
-            Développeur Front-End Junior avec un parcours initial dans le domaine
-            informatique, j&apos;ai entrepris une reconversion pour me spécialiser dans le
-            développement web. <br /> Passionné par la création d&apos;interfaces modernes
-            et performantes, j&apos;ai perfectionné mes compétences sur des technologies
-            comme <span className="text-gray-50">JavaScript, React, HTML,CSS</span> et{" "}
-            <span className="text-gray-50">tailwindcss.</span> En 2024, j&apos;ai validé
-            mes compétences chez OpenClassrooms, renforçant ainsi mon expertise dans la
-            création d&apos;applications web et l&apos;adoption des meilleures pratiques
-            de développement.
+            Développeur Front-End Junior, avec une solide base en informatique, je me
+            spécialise dans la conception et le développement d’interfaces modernes et
+            performantes. <br />. Passionné par le développement web, j’ai perfectionné
+            mes compétences sur des technologies comme{" "}
+            <span className="text-gray-50">JavaScript, React, HTML, CSS</span> et{" "}
+            <span className="text-gray-50">Tailwind CSS.</span> <br /> En 2024, j’ai
+            validé mes compétences chez OpenClassrooms, renforçant ainsi mon expertise
+            dans la création d’applications web dynamiques et l’application des meilleures
+            pratiques de développement. <br /> Toujours en veille technologique, je suis
+            motivé par l’innovation et prêt à contribuer activement à des projets
+            ambitieux.
           </p>
           <button
             onClick={handleVisibility}
@@ -337,7 +339,6 @@ const About = () => {
           ⬆️
         </button>
       )}
-     
     </section>
   );
 };
