@@ -1,12 +1,14 @@
-import Header from "../Components/Header/Header"
-import Routers from "../router/Routers"
+import Header from "../Components/Header/Header";
+import Routers from "../router/Routers";
 
 const Layout = () => {
   return (
     <div className="">
-      <Header/>
-      <Routers/>
+      <Header />
+      <main className="z-5">
+        <Routers />
+      </main>
     </div>
-  )
-}
-export default Layout
+  );
+};
+export default Layout;

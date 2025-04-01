@@ -12,12 +12,12 @@ const Project3 = () => {
   return (
     <section>
       <Titre title={<span className="md:text-xl lg:text-3xl text-sm">Projet 3</span>} />
-      <main className="">
-       
-          <Projects project={project[2]} />
-          <Buttons left={"/projects-2"} right="/projects-4" />
-       
-      </main>
+      <div className="project-2">
+        <Projects project={project[2]} />
+      </div>
+      <div className="fixed bottom-1/2 w-full z-[100]">
+        <Buttons left={"/projects-2"} right="/projects-4" />
+      </div>
     </section>
   );
 };
