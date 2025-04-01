@@ -1,65 +1,82 @@
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
-import ME from "../../assets/img-projects/me.jpg";
 import cv from "../../assets/data/cv.pdf";
-import { useState } from "react";
+import ME from "../../assets/img-projects/me.jpg";
 
 const Overview = () => {
   const [Error, setError] = useState(cv);
-  console.log(Error);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Animation d'entrée progressive des éléments
+    setIsVisible(true);
+  }, []);
+
   return (
-    <section className="min-h-screen flex items-center justify-center">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
       <div className="container mt-2">
         <div className="over__wrapper">
-          <div className="over__info lg:flex lg:flex-row flex flex-col  gap-10 ">
-            <div className="lg:w-[30%] flex flex-col items-center justify-center gap-1 relative">
-              <div className="relative p-1 ">
-                <div className="flex">
+          <div
+            className={`over__info lg:flex lg:flex-row flex flex-col gap-10 transition-all duration-1000 ${
+              isVisible ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="lg:w-[30%] flex flex-col items-center justify-center gap-3 relative backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20">
+              <div className="relative p-1 group transition-all duration-500 ease-in-out">
+                <div className="flex overflow-hidden rounded-full">
                   <img
                     src={ME}
                     alt="photo for me"
-                    className="w-44 h-44 object-cover max-w-full max-h-full rounded-full"
+                    className="w-48 h-48 object-cover max-w-full max-h-full rounded-full transform transition-all duration-500 hover:scale-105 filter saturate-100"
                   />
                 </div>
-                <div className="absolute inset-0 border-4 ring-2 ring-primaryColor border-primaryColor rounded-full animate-pulse"></div>
+                <div className="absolute inset-0 border-4 ring-2 ring-primaryColor border-primaryColor/70 rounded-full animate-pulse shadow-lg shadow-primaryColor/30"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-primaryColor via-yellow-500 to-primaryColor rounded-full blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-300"></div>
               </div>
 
               <h1
-                className="text-xl font-bold text-center text-primaryColor leading-relaxed
-              hover:underline cursor-pointer mt-4
+                className="text-2xl font-bold text-center text-white leading-relaxed
+              hover:text-primaryColor cursor-pointer mt-4 transition-all duration-300 ease-in-out
               "
               >
-                <Link to="/apropos">
-                  Mohamed zeinoudini <br />
-                  Abdoul-kader
+                <Link to="/apropos" className="relative group">
+                  <span className="bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent">
+                    Mohamed zeinoudini
+                  </span>{" "}
+                  <br />
+                  <span className="bg-gradient-to-r from-yellow-500 to-primaryColor bg-clip-text text-transparent">
+                    Abdoul-kader
+                  </span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primaryColor group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </h1>
-              <div>
-                <p className="text-lg md:text-left text-center text-primaryColor font-semibold mt-2">
+              <div className="mt-2 text-center">
+                <p className="text-lg text-white font-semibold mt-2 transition-all duration-300 hover:text-primaryColor">
                   Bienvenu, dans mon aventure
                 </p>
                 <br />
 
-                <p className="text-md md:text-left text-center text-primaryColor dark:text-primaryColor font-semibold">
+                <p className="text-md text-white font-semibold transition-all duration-300 hover:text-primaryColor">
                   Explorer mon portfolio et découvrir mes projets
                 </p>
 
-                <span className="text-right hidden lg:block cursor-pointer">
+                <span className="text-right hidden lg:block cursor-pointer mt-2">
                   <Link to="/">
-                    <i className="ri-arrow-right-up-fill text-3xl text-center text-primaryColor"></i>
+                    <i className="ri-arrow-right-up-fill text-3xl text-center text-primaryColor hover:text-white transition-all duration-300"></i>
                   </Link>
                 </span>
               </div>
               <Link to="/apropos">
-                <span className="lg:hidden my-8 w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center p-8 animate-bounce">
-                  <i className="ri-arrow-down-fill text-6xl text-center text-primaryColor"></i>
+                <span className="lg:hidden my-6 w-10 h-10 bg-primaryColor/20 backdrop-blur-sm rounded-full flex items-center justify-center p-8 animate-bounce shadow-lg shadow-primaryColor/30 hover:bg-primaryColor/50 transition-all duration-300">
+                  <i className="ri-arrow-down-fill text-5xl text-center text-white"></i>
                 </span>
               </Link>
 
-              <div className="border-4 border-primaryColor px-4 py-2 bg-gray-800 shadow-xl transform transition-transform duration-300 hover:scale-105">
-                <p className="text-md text-primaryColor font-semibold text-center">
+              <div className="border-2 border-primaryColor/70 px-6 py-4 bg-black/50 backdrop-blur-sm shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-primaryColor/30 rounded-lg">
+                <p className="text-md text-white font-semibold text-center">
                   Je suis un Dev Junior{" "}
-                  <span className="text-[#F97312] text-lg font-bold">
+                  <span className="bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent text-xl font-bold">
                     {" "}
                     <br />
                     <Typewriter
@@ -75,76 +92,96 @@ const Overview = () => {
                 </p>
               </div>
             </div>
-            <div className="lg:w-[70%] p-8 mt-16">
-              <div>
-                <div className="flex flex-col gap-5 justify-center">
+            <div className="lg:w-[70%] p-8 mt-8 lg:mt-0">
+              <div className="backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20">
+                <h2 className="text-2xl font-bold text-white mb-8 text-center bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent">
+                  Navigation
+                </h2>
+                <div className="flex flex-col gap-6 justify-center">
                   <div
-                    //! animation Aos
                     data-aos="fade-up"
                     data-aos-duration="1500"
-                    className="w-full border-2 border-primaryColor p-5 bg-[#2A1612] text-center text lg:text-xl text-primaryColor "
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
                   >
-                    <button className="transform transition-transform duration-300 hover:scale-105">
-                      <Link to="/projects-1" className="">
-                        Go see my projects here!
-                      </Link>
-                    </button>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                    <Link
+                      to="/projects-1"
+                      className="text-xl text-white group-hover:text-primaryColor transition-all duration-300 flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full"
+                    >
+                      <i className="ri-folder-open-line"></i> Go see my projects here!
+                    </Link>
                   </div>
 
                   <div
                     data-aos="fade-up"
                     data-aos-duration="1900"
                     data-aos-delay="300"
-                    className="w-full border-2 border-primaryColor p-5 bg-[#2A1612] text-center text lg:text-xl text-primaryColor "
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
                   >
-                    <button className="transform transition-transform duration-300 hover:scale-105">
-                      <Link to="/resume" className="">
-                        Compétences techniques !
-                      </Link>
-                    </button>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                    <Link
+                      to="/resume"
+                      className="text-xl text-white group-hover:text-primaryColor transition-all duration-300 flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full"
+                    >
+                      <i className="ri-code-box-line"></i> Compétences techniques !
+                    </Link>
                   </div>
 
                   <div
                     data-aos="fade-up"
                     data-aos-duration="2000"
                     data-aos-delay="400"
-                    className="w-full border-4 border-primaryColor p-5 bg-[#2A1612] text-center text lg:text-xl text-primaryColor hover:bg-[#a15c2e] hover:text-white hover:border-separate "
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
                   >
-                    <button className="transform transition-transform duration-300 hover:scale-105">
-                      <span className="group:hover:bg-primaryColor hover:text-white">
-                        {Error ? (
-                          <a href={cv} download>
-                            Récupérer le PDF maintenant !
-                          </a>
-                        ) : (
-                          <Link to="/error">Sorry</Link>
-                        )}
-                      </span>
-                    </button>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                    <span className="text-xl text-white group-hover:text-primaryColor transition-all duration-300 flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full">
+                      {Error ? (
+                        <a
+                          href={cv}
+                          download
+                          className="flex items-center justify-center gap-2 w-full"
+                        >
+                          <i className="ri-file-download-line"></i> Récupérer le PDF
+                          maintenant !
+                        </a>
+                      ) : (
+                        <Link
+                          to="/error"
+                          className="flex items-center justify-center gap-2 w-full"
+                        >
+                          <i className="ri-error-warning-line"></i> Sorry
+                        </Link>
+                      )}
+                    </span>
                   </div>
 
                   <div
                     data-aos="fade-up"
                     data-aos-duration="2200"
                     data-aos-delay="500"
-                    className="w-full border-2 border-primaryColor p-5 bg-[#2A1612] text-center text lg:text-xl text-primaryColor "
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
                   >
-                    <button className="transform transition-transform duration-300 hover:scale-105">
-                      <span className="lg:flex lg:items-center lg:justify-center lg:gap-6">
-                        <span className="hidden md:block animate-pulse text-xl self-start">
-                          <i className="ri-arrow-left-fill"></i>
-                        </span>
-                        <span className="self-center">
-                          <Link to="/apropos">À propos de moi !</Link>
-                        </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                    <Link
+                      to="/apropos"
+                      className="lg:flex lg:items-center lg:justify-center lg:gap-2 text-xl text-white group-hover:text-primaryColor transition-all duration-300 transform transition-all duration-500 hover:scale-105 w-full"
+                    >
+                      <span className="hidden md:block text-xl self-start">
+                        <i className="ri-user-line"></i>
                       </span>
-                    </button>
+                      <span className="self-center">À propos de moi !</span>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
             {/* ---- End Corps portfolio---- */}
           </div>
+
+          {/* Éléments décoratifs */}
+          <div className="absolute top-10 left-10 w-32 h-32 bg-primaryColor/20 rounded-full filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primaryColor/5 rounded-full filter blur-3xl animate-slow opacity-30"></div>
         </div>
       </div>
     </section>

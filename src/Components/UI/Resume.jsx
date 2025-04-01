@@ -1,7 +1,14 @@
+import { useEffect, useState } from "react";
 import Titre from "../UI/Titre.jsx";
-import { useState } from "react";
+
 const Resume = () => {
   const [showText, setShowText] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -9,232 +16,262 @@ const Resume = () => {
     });
   };
   return (
-    <section id="cpt" className="relative">
-      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">Compétences</span>} />
-      <div className="container ">
-        <div className="text-center">
-          <h2 className="text-gray-50 font-[800]  md:text-2xl text-sm mb-4">
+    <section
+      id="cpt"
+      className="relative min-h-screen bg-gradient-to-b from-gray-900 to-black py-10"
+    >
+      <Titre
+        title={<span className="md:text-xl lg:text-3xl text-sm">Compétences</span>}
+      />
+      {/* Éléments décoratifs */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primaryColor/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primaryColor/5 rounded-full filter blur-3xl animate-slow opacity-30"></div>
+      </div>
+
+      <div className="container relative z-10 max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent mb-2">
             Front-End
           </h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-primaryColor to-yellow-500 mx-auto rounded-full"></div>
         </div>
-        <div className="flex flex-col justify-center sm:py-12">
-          <div className="w-full py-3 px-2 sm:max-w-xl sm:mx-auto sm:px-0">
-            <div className="relative text-gray-700 antialiased font-semibold text-sm">
-              {/*============== Vertical line running through the middle ===============*/}
-              <div
-                className="hidden absolute w-1 sm:block bg-primaryColor h-full left-1/2 
-              transform -translate-x-1/2 
-              "
-              ></div>
-              {/* ================ left card   ===============*/}
-              <div className="mt-6 sm:mt-0 sm:mb-8">
-                <div className="flex flex-col items-center sm:flex-row ">
-                  <div className="flex justify-start w-full mx-auto items-center">
-                    <div className="w-full sm:w-1/2 sm:pr-8">
-                      <div
-                        data-aos="fade-right"
-                        data-aos-duration="1500"
-                        data-aos-delay="200"
-                        className="
-                        border-4 border-primaryColor
-                       text-gray-200
-                        bg-gray-900 p-4 rounded shadow group cursor-pointer ease-in duration-150 "
-                      >
-                        <p className="md:text-xl text-sm group-hover:font-[500] leading-7">
-                          <ul>
-                            <li className="md:text-md text-sm leading-8">Implémenter une interface responsive avec HTML et CSS</li>
-                            <br />
-                            <li className="md:text-md text-sm leading-8">
-                              Intégrer du contenu conformément à une maquette avec HTML et
-                              CSS
-                            </li>
-                          </ul>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div
-                    className=" rounded-full bg-gray-900 border-primaryColor
-                  border-4 w-12 h-12 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 
-                  sm:translate-y-0 *:flex items-center justify-center
-                   -top-2 
-                  sm:top-[10%]
-                  "
-                  >
-                    <span className="text-3xl text-gray-100 animate-slow flex items-center justify-center">
-                      <i className="ri-html5-fill"></i>
-                    </span>
-                  </div>
+        {/* Nouvelle disposition en grille */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* Carte HTML & CSS */}
+          <div
+            className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "100ms" }}
+          >
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-primaryColor/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-200 hover:border-primaryColor/60 h-full flex flex-col"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-html5-fill text-2xl text-primaryColor"></i>
                 </div>
+                <h3 className="text-md font-semibold text-white">HTML & CSS</h3>
+              </div>
+              <ul className="space-y-2 mt-4">
+                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                  <span className="text-primaryColor">→</span> Implémenter une interface
+                  responsive avec HTML et CSS
+                </li>
+                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                  <span className="text-primaryColor">→</span> Intégrer du contenu
+                  conformément à une maquette avec HTML et CSS
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Carte JavaScript */}
+          <div
+            className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-yellow-400/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-200 hover:border-yellow-400/60 h-full flex flex-col"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-javascript-fill text-2xl text-yellow-400"></i>
+                </div>
+                <h3 className="text-md font-semibold text-white">JavaScript</h3>
+              </div>
+              <ul className="space-y-2 mt-4">
+                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                  <span className="text-primaryColor">→</span> Gérer les événements
+                </li>
+                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                  <span className="text-primaryColor">→</span> Manipuler les éléments du
+                  DOM avec JavaScript
+                </li>
+                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                  <span className="text-primaryColor">→</span> Récupérer les données
+                  utilisateurs via des formulaires
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Carte React */}
+          <div
+            className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "300ms" }}
+          >
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-blue-700/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-50 hover:border-blue-700/60 h-full flex flex-col"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-reactjs-line text-2xl text-blue-700"></i>
+                </div>
+                <h3 className="text-md font-semibold text-white">React</h3>
+              </div>
+              <ul className="space-y-2 mt-4">
+                <li className="md:text-md text-sm leading-8 font-semibold">Les hooks</li>
+                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                  <span className="text-yellow-500">→</span> useState
+                </li>
+                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                  <span className="text-yellow-500">→</span> useEffect
+                </li>
+                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                  <span className="text-yellow-500">→</span> useContext
+                </li>
+                <li className="md:text-md text-sm leading-6 font-semibold mt-2">
+                  État Global
+                </li>
+                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                  <span className="text-yellow-500">→</span> API Context
+                </li>
+                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                  <span className="text-yellow-500">→</span> Redux Toolkit
+                </li>
+                <li className="md:text-md text-sm leading-6 font-semibold mt-2">Test</li>
+                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                  <span className="text-yellow-500">→</span> Tests unitaires
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Carte Compétences Diverses */}
+          <div
+            className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "400ms" }}
+          >
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-green-600/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-50 hover:border-green-600/60 h-full flex flex-col"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-psychotherapy-fill text-2xl text-green-600"></i>
+                </div>
+                <h3 className="text-md font-semibold text-white">Diverses</h3>
               </div>
 
-              {/* ================ right card =============== */}
-              <div className="mt-6 sm:mt-0 sm:mb-12">
-                <div className="flex flex-col items-center sm:flex-row ">
-                  <div className="flex justify-end w-full mx-auto items-center">
-                    <div className="w-full sm:w-1/2 sm:pl-8">
-                      <div
-                        data-aos="fade-left"
-                        data-aos-duration="1500"
-                        data-aos-delay="300"
-                        className="bg-gray-900 p-4  border-4 border-primaryColor
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-4">
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2">
+                    Divers
+                  </h4>
+                  <ul className="space-y-1">
+                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                      <span className="text-yellow-500">→</span> SEO
+                    </li>
+                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                      <span className="text-yellow-500">→</span> Debug
+                    </li>
+                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                      <span className="text-yellow-500">→</span> API REST
+                    </li>
+                  </ul>
+                </div>
 
-                       text-gray-200 rounded shadow group  cursor-pointer ease-in duration-150 "
-                      >
-                        <p className="text-md pt-4 group-hover:font-[500] leading-7 group-hover:text-white">
-                          <ul>
-                            <li className="md:text-md text-sm leading-8">Gérer les événements </li>
-                            <br />
-                            <li className="md:text-md text-sm leading-8">
-                              Manipuler les éléments du DOM avec JavaScript Récupérer les
-                              données utilisateurs dans le JavaScript via des formulaires
-                            </li>
-                          </ul>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="rounded-full bg-primaryColor border-primaryColor
-                  border-4 w-12 h-12 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 
-                  sm:translate-y-0 flex items-center justify-center
-                
-                
-                  "
-                  >
-                    <span className="text-3xl text-yellow-400 animate-slow flex items-center justify-center">
-                      <i className="ri-javascript-fill"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* ================ left card ================*/}
-              <div className="mt-6 sm:mt-0 sm:mb-12">
-                <div className="flex flex-col items-center sm:flex-row ">
-                  <div className="flex justify-start w-full mx-auto items-center">
-                    <div className="w-full sm:w-1/2 sm:pr-8">
-                      <div
-                        data-aos="fade-right"
-                        data-aos-duration="1500"
-                        data-aos-delay="400"
-                        className="bg-gray-900 p-4  border-4 border-primaryColor rounded shadow group  cursor-pointer ease-in duration-150 text-gray-50 "
-                      >
-                        <p className="text-[15px] text-smallTextColor group-hover:text-white group-hover:font-[500] leading-7">
-                          <ul>
-                            <ul>
-                              <h6 className="md:text-md text-sm leading-8">Les hooks</h6>
-                              <li className="text-primaryColor md:text-md text-sm leading-8">useState</li>
-                              <li className="text-primaryColor md:text-md text-sm leading-8">useEffect</li>
-                              <li className="text-primaryColor md:text-md text-sm leading-8">useContext...</li>
-                              <li>Etat Global</li>
-                              <li className="text-primaryColor md:text-md text-sm leading-8">Api context</li>
-                              <li className="text-primaryColor md:text-md text-sm leading-8">Redux Toolkit...</li>
-                              <li>Test</li>
-                              <li className="text-primaryColor md:text-md text-sm leading-8">Unitaires...</li>
-                            </ul>
-                          </ul>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="rounded-full bg-primaryColor border-primaryColor
-                  border-4 w-12 h-12 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 
-                  sm:translate-y-0 flex items-center justify-center
-                  "
-                  >
-                    <span className="text-3xl text-blue-700 animate-slow flex items-center justify-center">
-                      <i className="ri-reactjs-line"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* ================ right card =============== */}
-              <div className="mt-6 sm:mt-0 sm:mb-12">
-                <div className="flex flex-col items-center sm:flex-row ">
-                  <div className="flex justify-end w-full mx-auto items-center">
-                    <div className="w-full sm:w-1/2 sm:pl-8">
-                      <div
-                        data-aos="fade-left"
-                        data-aos-duration="1500"
-                        data-aos-delay="300"
-                        className="bg-gray-900  border-4 border-primaryColor p-4 rounded shadow group  cursor-pointer ease-in duration-150 text-gray-50 "
-                      >
-                        <h3 className="md:text-md text-sm leading-8 font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
-                          {" "}
-                          Divers..
-                        </h3>
-                        <p className="text-[15px] text-smallTextColor group-hover:text-white group-hover:font-[500] leading-7">
-                          <ul>
-                            <li className="text-primaryColor md:text-md text-sm leading-8">- SEO</li>
-                            <li className="text-primaryColor md:text-md text-sm leading-8">- Debug</li>
-                            <li className="text-primaryColor md:text-md text-sm leading-8">- API rest</li>
-                          </ul>
-                        </p>
-                        <h3 className="md:text-md text-sm leading-8 font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
-                          {" "}
-                          Méthedologies
-                        </h3>
-                        <p className="lg:text-[15px] text-sm text-smallTextColor group-hover:text-white group-hover:font-[500] leading-7">
-                          <ul>
-                            <li className="text-primaryColor md:text-xl text-sm leading-8">- Agile</li>
-                          </ul>
-                        </p>
-                        <h3 className="md:text-md text-sm leading-8 font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-md">
-                          {" "}
-                          Outils Dev..
-                        </h3>
-                        <ul>
-                          <li className="text-primaryColor md:text-md text-sm leading-8">- Vscode</li>
-                          <li className="text-primaryColor md:text-md text-sm leading-8">- Git</li>
-                          <li className="text-primaryColor md:text-md text-sm leading-8">- WebStorm</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="rounded-full bg-primaryColor border-primaryColor 
-                  border-4 w-12 h-12 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 
-                  sm:translate-y-0 flex items-center justify-center
-                  "
-                  >
-                    <span className="text-3xl text-green-600 animate-slow">
-                      <i className="ri-psychotherapy-fill"></i>
-                    </span>
-                  </div>
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2">
+                    Méthodologies
+                  </h4>
+                  <ul className="space-y-1">
+                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                      <span className="text-yellow-500">→</span> Agile
+                    </li>
+                  </ul>
+
+                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2 mt-4">
+                    Outils Dev
+                  </h4>
+                  <ul className="space-y-1">
+                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                      <span className="text-yellow-500">→</span> VSCode
+                    </li>
+                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                      <span className="text-yellow-500">→</span> Git
+                    </li>
+                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                      <span className="text-yellow-500">→</span> WebStorm
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Section Citation et Contact - Nouvelle disposition */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+          <div
+            className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "500ms" }}
+          >
+            <div className="backdrop-blur-sm bg-black/30 p-8 rounded-xl shadow-2xl border border-primaryColor/20 h-full transform transition-all duration-500 hover:shadow-primaryColor/20 flex flex-col justify-center">
+              <div className="relative group mb-6">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primaryColor via-yellow-500 to-primaryColor rounded-lg blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-300"></div>
+                <p className="relative md:text-lg text-sm leading-6 lg:max-w-[600] lg:mx-auto text-primaryColor font-[500] p-4 bg-black/50 rounded-lg border border-primaryColor/30">
+                  Je suis aussi motivé qu&apos;un{" "}
+                  <span className="text-blue-700 animate-pulse font-bold">useEffect</span>{" "}
+                  sans dépendances, toujours prêt à se déclencher !&quot;
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "600ms" }}
+          >
+            <div className="backdrop-blur-sm bg-black/30 p-8 rounded-xl shadow-2xl border border-primaryColor/20 h-full transform transition-all duration-500 hover:shadow-primaryColor/20 flex flex-col justify-center">
+              <button
+                onClick={() => setShowText(!showText)}
+                className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-4 group"
+              >
+                <i className="ri-phone-line text-2xl text-primaryColor group-hover:text-yellow-500 transition-colors duration-300"></i>
+                {showText === false ? (
+                  <span className="text-white text-lg group-hover:text-yellow-500 transition-colors duration-300 animate-pulse">
+                    Contactez-moi pour plus d'informations !
+                  </span>
+                ) : (
+                  <span className="text-gray-50 text-xl font-bold group-hover:text-yellow-500 transition-colors duration-300">
+                    07-68-63-85-29
+                  </span>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Bouton de retour en haut */}
       <button
-          className="btn bg-primaryColor text-gray-50 absolute right-5 bottom-48 "
-          onClick={scrollToTop}
+        className="btn bg-black text-gray-50 fixed right-5 bottom-10 border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-110 p-4 rounded-full z-50"
+        onClick={scrollToTop}
       >
-        <i className="ri-arrow-up-line"></i>
+        <i className="ri-arrow-up-line text-xl text-primaryColor"></i>
       </button>
-      {/* End resume */}
-      <div className="flex flex-col items-center justify-center text-center px-2 sm:px-0 ">
-        <p className=" md:text-lg text-sm leading-8 lg:max-w-[600] lg:mx-auto text-primaryColor font-[500] ">
-          Je suis aussi motivé qu&apos;un{" "}
-          <span className="text-blue-700 animate-pulse">useEffect</span> sans dépendances,
-          toujours prêt à se déclencher !&quot; <br />
-        </p>
-        <button 
-        onClick={() => setShowText(!showText)}
-        className="btn mt-3">
-          {
-            showText === false ? <span className="text-white animate-pulse">call me here for more information !</span>: <span 
-            className="text-gray-50 text-lg font-bold"
-          
-            >
-              07-68-63-85-29
-            </span>
-          }
-        </button>
-      </div>
     </section>
   );
 };

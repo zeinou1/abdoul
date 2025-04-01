@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Titre from "./Titre";
 const About = () => {
   const [showText, setShowText] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
+
   const handleVisibility = () => {
     setShowText(!showText);
   };
@@ -14,6 +17,7 @@ const About = () => {
       behavior: "smooth",
     });
   };
+
   // display btn in scroll
   const handleScroll = () => {
     if (window.scrollY > 300) {
@@ -21,9 +25,22 @@ const About = () => {
     } else {
       setShowButton(false);
     }
+
+    // Déterminer la section active pour les effets de parallaxe
+    const scrollPosition = window.scrollY;
+    if (scrollPosition < 500) {
+      setActiveSection("about");
+    } else if (scrollPosition < 1000) {
+      setActiveSection("contact");
+    } else if (scrollPosition < 1500) {
+      setActiveSection("formation");
+    } else {
+      setActiveSection("experience");
+    }
   };
 
   useEffect(() => {
+    setIsVisible(true);
     window.addEventListener("scroll", handleScroll);
     // clean composant after scrolling
     return () => {
@@ -32,311 +49,400 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="relative">
-      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">À propos </span>} />
-      <div className="container">
-        <div className="px-2">
-          <p className="text-center md:text-left  leading-10 text-primaryColor md:text-xl text-sm">
-            Développeur Front-End Junior, avec une solide base en informatique, je me
-            spécialise dans la conception et le développement d’interfaces modernes et
-            performantes. <br />. Passionné par le développement web, j’ai perfectionné
-            mes compétences sur des technologies comme{" "}
-            <span className="text-gray-50">JavaScript, React, HTML, CSS</span> et{" "}
-            <span className="text-gray-50">Tailwind CSS.</span> <br /> En 2024, j’ai
-            validé mes compétences chez OpenClassrooms, renforçant ainsi mon expertise
-            dans la création d’applications web dynamiques et l’application des meilleures
-            pratiques de développement. <br /> Toujours en veille technologique, je suis
-            motivé par l’innovation et prêt à contribuer activement à des projets
-            ambitieux.
-          </p>
-          <button
-            onClick={handleVisibility}
-            className="border-2 border-primaryColor  px-2"
+    <section
+      id="about"
+      className="relative bg-gradient-to-b from-gray-900 to-black min-h-screen py-10"
+    >
+      {/* Éléments décoratifs */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primaryColor/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primaryColor/5 rounded-full filter blur-3xl animate-slow opacity-30"></div>
+      </div>
+
+      <div className="relative z-10">
+        <Titre
+          title={
+            <span className="md:text-xl lg:text-3xl text-sm bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent">
+              À propos{" "}
+            </span>
+          }
+        />
+        <div className="container max-w-6xl mx-auto px-4">
+          <div
+            className={`backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
           >
-            {setShowText ? (
-              <span className="md:text-xl text-sm text-gray-50 text-center">
-                lire la suite
-              </span>
-            ) : (
-              ""
+            <p className="text-center md:text-left leading-10 text-white md:text-xl text-sm">
+              Développeur Front-End Junior, avec une solide base en informatique, je me
+              spécialise dans la conception et le développement d'interfaces modernes et
+              performantes. <br />. Passionné par le développement web, j'ai perfectionné
+              mes compétences sur des technologies comme{" "}
+              <span className="bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent font-bold">
+                JavaScript, React, HTML, CSS
+              </span>{" "}
+              et{" "}
+              <span className="bg-gradient-to-r from-yellow-500 to-primaryColor bg-clip-text text-transparent font-bold">
+                Tailwind CSS.
+              </span>{" "}
+              <br /> En 2024, j'ai validé mes compétences chez OpenClassrooms, renforçant
+              ainsi mon expertise dans la création d'applications web dynamiques et
+              l'application des meilleures pratiques de développement. <br /> Toujours en
+              veille technologique, je suis motivé par l'innovation et prêt à contribuer
+              activement à des projets ambitieux.
+            </p>
+            <div className="flex justify-center md:justify-start mt-6">
+              <button
+                onClick={handleVisibility}
+                className="px-6 py-3 bg-gradient-to-r from-primaryColor to-yellow-500 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-primaryColor/50 flex items-center gap-2"
+              >
+                {!showText ? (
+                  <span className="md:text-xl text-sm text-white flex items-center gap-2">
+                    <i className="ri-arrow-down-line"></i> Lire la suite
+                  </span>
+                ) : (
+                  <span className="md:text-xl text-sm text-white flex items-center gap-2">
+                    <i className="ri-arrow-up-line"></i> Réduire
+                  </span>
+                )}
+              </button>
+            </div>
+
+            {showText && (
+              <div className="mt-6 backdrop-blur-sm bg-primaryColor/10 p-4 rounded-lg border border-primaryColor/30 transform transition-all duration-500 animate-fadeIn">
+                <p className="md:text-xl text-sm text-white font-bold leading-8 text-center md:text-left">
+                  Je suis à la recherche d'une opportunité avec laquelle je peux
+                  contribuer avec mon expertise en React tout en continuant à grandir en
+                  tant que développeur. Prêt à relever de nouveaux défis.
+                </p>
+              </div>
             )}
-          </button>
-
-          {showText && (
-            <p className="md:text-xl text-sm text-primaryColor font-bold mt-2 leading-8 text-center md:text-left">
-              Je suis à la recherche d’une opportunité avec laquelle je peux contribuer
-              avec mon expertise en React tout en continuant à grandir en tant que
-              développeur. Prêt à relever de nouveaux défis.
-            </p>
-          )}
-        </div>
-        {/* End à propos */}
-        <div className="contact mt-24">
-          <div className="contact__info flex flex-col  justify-center">
-            <h3 className="text-gray-50 md:text-xl text-sm">Contact</h3> <br />
-            <p className="text-lg">
-              {" "}
-              <span className="text-primaryColor text-sm md:text-xl">Nom:</span>{" "}
-              <span className="text-sm md:text-xl">Mohamed zeinoudini abdoul-kader</span>
-            </p>
-            <p className="text-lg mt-3">
-              {" "}
-              <span className="text-primaryColor">Téléphone:</span>{" "}
-              <span className="text-sm md:text-xl">0768638529</span>
-            </p>
-            <p className="text-lg mt-3">
-              {" "}
-              <span className="text-primaryColor">E-mail:</span>{" "}
-              <span>
-                <a href="mailto:zarikader@example.com" className="">
-                  <span className="text-sm md:text-xl">contactmehere@gmail.com</span>
-                </a>
-              </span>
-            </p>
           </div>
-          <div className="social__network">
-            {/* <div>
-              <span className="text-gray-50 text-5xl ">
-                <i className="ri-facebook-fill"></i>
-              </span>{" "}
-              <span className="pl-2">
-                <a href="/">Facebook</a>
-              </span>
-              <span className="text-4xl"></span>
-            </div> */}
-            <div>
-              <span className="text-gray-50 text-5xl ">
-                <i className="ri-github-fill"></i>
-              </span>{" "}
-              <span className="pl-2">
-                <a href="https://github.com/zeinou1">
-                  <span className="text-sm md:text-md"></span>
-                  Github
-                </a>
-              </span>
-              <span className="text-4xl"></span>
-            </div>
-            <div>
-              <span className="text-gray-50 text-5xl ">
-                <i className="ri-linkedin-fill"></i>
-              </span>{" "}
-              <span className="pl-2">
-                <a href="https://www.linkedin.com/in/abdoul-kader-mohamed-zeinoudini-474229137/">
-                  LinkedIn
-                </a>
-              </span>
-              <span className="text-4xl"></span>
-            </div>
-          </div>
-        </div>
 
-        {/* End contact */}
-        <div className="formation mt-24">
-          <h3 className="text-gray-50 md:text-xl text-sm">Formation et diplôme</h3> <br />
-          <div className="formation__wrapper">
-            <div className="formation__content">
-              <div className="formation__group flex flex-col justify-center gap-7">
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1500"
-                  data-aos-delay="200"
-                  className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
-                >
-                  <h6 className="text-gray-50 md:text-xl text-sm ">
-                    Intégrateur Web / react
-                  </h6>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    OpenClassrooms / paris
-                  </p>
-                  <span className="text-primaryColor md:text-xl text-sm">
-                    2023 - 2024
+          {/* Contact section */}
+          <div
+            className={`backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 ${
+              activeSection === "contact"
+                ? "scale-[1.02] shadow-primaryColor/30"
+                : "scale-100"
+            }`}
+          >
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent inline-block">
+              Contact
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <div className="flex flex-col space-y-2">
+                  <div className="flex items-center gap-2">
+                    <i className="ri-user-fill text-primaryColor text-xl"></i>
+                    <span className="text-primaryColor text-sm md:text-xl font-semibold">
+                      Nom:
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-xl text-white ml-6">
+                    Mohamed zeinoudini abdoul-kader
                   </span>
                 </div>
 
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1500"
-                  data-aos-delay="300"
-                  className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
-                >
-                  <h6 className="text-gray-50 md:text-xl text-sm ">
-                    Master Valorisation des usages numériques
-                  </h6>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    {" "}
-                    Université Paris 8
-                  </p>
-                  <span className="text-primaryColor md:text-xl text-sm">
-                    2019 - 2020
-                  </span>
+                <div className="flex flex-col space-y-2">
+                  <div className="flex items-center gap-2">
+                    <i className="ri-phone-fill text-primaryColor text-xl"></i>
+                    <span className="text-primaryColor text-sm md:text-xl font-semibold">
+                      Téléphone:
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-xl text-white ml-6">0768638529</span>
                 </div>
 
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1500"
-                  data-aos-delay="400"
-                  className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
-                >
-                  <h6 className="text-gray-50 md:text-xl text-sm">
-                    Licence Réseau informatique
-                  </h6>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    ISI Dakar / Sénégal
-                  </p>
-                  <span className="text-primaryColor md:text-xl text-sm">2015- 2016</span>
+                <div className="flex flex-col space-y-2">
+                  <div className="flex items-center gap-2">
+                    <i className="ri-mail-fill text-primaryColor text-xl"></i>
+                    <span className="text-primaryColor text-sm md:text-xl font-semibold">
+                      E-mail:
+                    </span>
+                  </div>
+                  <a
+                    href="mailto:contactmehere@gmail.com"
+                    className="text-sm md:text-xl text-white ml-6 hover:text-primaryColor transition-colors duration-300"
+                  >
+                    contactmehere@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-white mb-4">Réseaux sociaux</h4>
+                <div className="space-y-4">
+                  <a
+                    href="https://github.com/zeinou1"
+                    className="flex items-center gap-4 p-3 border border-primaryColor/30 rounded-lg bg-black/50 transform transition-all duration-300 hover:scale-105 hover:bg-primaryColor/20 hover:border-primaryColor"
+                  >
+                    <i className="ri-github-fill text-3xl text-white"></i>
+                    <span className="text-white hover:text-primaryColor transition-colors duration-300">
+                      Github
+                    </span>
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/abdoul-kader-mohamed-zeinoudini-474229137/"
+                    className="flex items-center gap-4 p-3 border border-primaryColor/30 rounded-lg bg-black/50 transform transition-all duration-300 hover:scale-105 hover:bg-primaryColor/20 hover:border-primaryColor"
+                  >
+                    <i className="ri-linkedin-fill text-3xl text-white"></i>
+                    <span className="text-white hover:text-primaryColor transition-colors duration-300">
+                      LinkedIn
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* End formation */}
-        {/* Experience */}
-        <div className="formation mt-24">
-          <h3 className="text-gray-50 md:text-xl text-sm">
-            Expériences professionnelles
-          </h3>{" "}
-          <br />
-          <div className="formation__wrapper">
-            <div className="formation__content">
-              <div className="formation__group flex flex-col justify-center gap-7">
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="1500"
-                  data-aos-delay="200"
-                  className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
-                >
-                  <h6 className="text-gray-50 md:text-xl text-sm">Projet personnel</h6>
-                  <div
-                    className="lg:flex  lg:gap-10 lg:flex-row flex flex-col gap-4
-                  "
-                  >
-                    <h6>
-                      VisitKM :{" "}
-                      <span className="md:text-xl  text-sm">
-                        {" "}
-                        Est Un site de réservation d’Appartement en ligne
-                      </span>
+
+          {/* Formation section */}
+          <div
+            className={`backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 ${
+              activeSection === "formation"
+                ? "scale-[1.02] shadow-primaryColor/30"
+                : "scale-100"
+            }`}
+          >
+            <h3 className="lg:text-2xl font-bold mb-6 bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent inline-block">
+              Formation et diplôme
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-delay="200"
+                className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
+                <h6 className="text-gray-50 md:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
+                  Intégrateur Web / React
+                </h6>
+                <p className="text-primaryColor md:text-xl text-sm">
+                  OpenClassrooms / Paris
+                </p>
+                <span className="text-primaryColor md:text-xl text-sm block mt-2">
+                  2023 - 2024
+                </span>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-delay="300"
+                className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
+                <h6 className="text-gray-50 md:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
+                  Master Valorisation des usages numériques
+                </h6>
+                <p className="text-primaryColor md:text-xl text-sm">Université Paris 8</p>
+                <span className="text-primaryColor md:text-xl text-sm block mt-2">
+                  2019 - 2020
+                </span>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-delay="400"
+                className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
+                <h6 className="text-gray-50 md:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
+                  Licence Réseau informatique
+                </h6>
+                <p className="text-primaryColor md:text-xl text-sm">
+                  ISI Dakar / Sénégal
+                </p>
+                <span className="text-primaryColor md:text-xl text-sm block mt-2">
+                  2015 - 2016
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Experience section */}
+          <div
+            className={`backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 ${
+              activeSection === "experience"
+                ? "scale-[1.02] shadow-primaryColor/30"
+                : "scale-100"
+            }`}
+          >
+            <h3 className="lg:text-2xl font-bold mb-6 bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent inline-block">
+              Expériences professionnelles
+            </h3>
+
+            <div className="space-y-8">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-delay="200"
+                className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                  <h6 className="text-gray-50 md:text-xl text-sm font-bold group-hover:text-primaryColor transition-colors duration-300">
+                    Projet personnel - VisitKM
+                  </h6>
+                  <span className="text-primaryColor md:text-xl text-sm">
+                    Octobre - 2024
+                  </span>
+                </div>
+                <p className="text-white md:text-lg text-sm mb-4">
+                  Site de réservation d'Appartement en ligne
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                  <div className="space-y-3">
+                    <h6 className="text-gray-300 font-bold md:text-lg text-sm flex items-center gap-2">
+                      <i className="ri-code-s-slash-line text-primaryColor"></i>{" "}
+                      Technologies:
                     </h6>
-                    <span className="text-primaryColor md:text-xl text-sm">
-                      Octobre - 2024
-                    </span>
+                    <p className="text-primaryColor md:text-lg text-sm ml-6">
+                      React, Redux-Toolkit, API-Context, Tailwind CSS
+                    </p>
                   </div>
-                  <div className="text-primaryColor md:text-xl text-sm">
-                    <div>
-                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">
-                        Technologies:
-                      </h6>
-                      <br />
-                      <span className="md:text-xl text-sm">
-                        React, Redux-Toolkit, API-Context, Tailwind Css
-                      </span>
-                    </div>
-                  </div>
-                  <div className="text-primaryColor text-md">
-                    <div>
-                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">Rôle</h6>
-                      <br />
-                      <span className="md:text-xl text-sm">
-                        Création d interfaces utilisateurs, gestion de l'état avec Redux
-                        Toolkit
-                      </span>
-                    </div>
-                  </div>
-                  <div className="text-primaryColor text-md">
-                    <div>
-                      <h6 className="text-gray-600 font-bold md:text-xl text-sm">
-                        {" "}
-                        Fonctionnalités:
-                      </h6>
-                      <br />
-                      <span>
-                        <div className="flex flex-col gap-2">
-                          <span className="md:text-xl text-sm">
-                            1. Intégré des API pour gérer l'authentification des
-                            utilisateurs Par (Token)
-                          </span>{" "}
-                          <br />
-                          <span className="md:text-xl text-sm">
-                            2. L’enregistrement et la mise à jour des utilisateurs
-                          </span>{" "}
-                          <span className="md:text-xl text-sm">
-                            3. Récupération du profil utilisateur via (ID)
-                          </span>{" "}
-                          <br />
-                          <span className="md:text-xl text-sm">
-                            4. L’ajout d’appartement et la mise à jour ,
-                          </span>{" "}
-                          <br />
-                          <span className="md:text-xl text-sm">5. Réservation</span>
-                        </div>
-                      </span>
-                    </div>
+
+                  <div className="space-y-3">
+                    <h6 className="text-gray-300 font-bold md:text-lg text-sm flex items-center gap-2">
+                      <i className="ri-user-settings-line text-primaryColor"></i> Rôle:
+                    </h6>
+                    <p className="text-primaryColor md:text-lg text-sm ml-6">
+                      Création d'interfaces utilisateurs, gestion de l'état avec Redux
+                      Toolkit
+                    </p>
                   </div>
                 </div>
+
+                <div className="mt-6">
+                  <h6 className="text-gray-300 font-bold md:text-lg text-sm flex items-center gap-2 mb-3">
+                    <i className="ri-function-line text-primaryColor"></i>{" "}
+                    Fonctionnalités:
+                  </h6>
+                  <ul className="space-y-2 ml-6">
+                    <li className="text-primaryColor md:text-lg text-sm flex items-start gap-2">
+                      <span className="text-white font-bold">1.</span> Intégré des API
+                      pour gérer l'authentification des utilisateurs Par (Token)
+                    </li>
+                    <li className="text-primaryColor md:text-lg text-sm flex items-start gap-2">
+                      <span className="text-white font-bold">2.</span> L'enregistrement et
+                      la mise à jour des utilisateurs
+                    </li>
+                    <li className="text-primaryColor md:text-lg text-sm flex items-start gap-2">
+                      <span className="text-white font-bold">3.</span> Récupération du
+                      profil utilisateur via (ID)
+                    </li>
+                    <li className="text-primaryColor md:text-lg text-sm flex items-start gap-2">
+                      <span className="text-white font-bold">4.</span> L'ajout
+                      d'appartement et la mise à jour
+                    </li>
+                    <li className="text-primaryColor md:text-lg text-sm flex items-start gap-2">
+                      <span className="text-white font-bold">5.</span> Réservation
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div
                   data-aos="fade-up"
                   data-aos-duration="1500"
                   data-aos-delay="200"
-                  className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
+                  className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
                 >
-                  <h6 className="text-gray-50 md:text-xl text-sm ">Employé polyvalent</h6>
-                  <span className="text-primaryColor md:text-xl text-sm">
-                    2020 - 2023
-                  </span>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    Résolution de problèmes, Travail en équipe, Rigueur, relation client
-                  </p>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    Gestion des Commandes - Étiquetage - Drive - Inventaire
-                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
+                  <div className="flex flex-col justify-between h-full">
+                    <div>
+                      <h6 className="text-gray-50 lg:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
+                        Employé polyvalent
+                      </h6>
+                      <span className="text-primaryColor md:text-xl text-sm block mb-4">
+                        2020 - 2023
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-primaryColor md:text-lg text-sm">
+                        Résolution de problèmes, Travail en équipe, Rigueur, relation
+                        client
+                      </p>
+                      <p className="text-primaryColor md:text-lg text-sm mt-2">
+                        Gestion des Commandes - Étiquetage - Drive - Inventaire
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div
                   data-aos="fade-up"
                   data-aos-duration="1500"
                   data-aos-delay="300"
-                  className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
+                  className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
                 >
-                  <h6 className="text-gray-50 md:text-xl text-sm">
-                    Stage Technicien informatique
-                  </h6>
-                  <span className="text-primaryColor md:text-xl text-sm">2016</span>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    Gestion et résolution des incidents - Entretien de l&apos;active
-                  </p>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    Directory - Installation des machines Windows/Linux - Mise à jour des
-                    machines
-                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
+                  <div className="flex flex-col justify-between h-full">
+                    <div>
+                      <h6 className="text-gray-50 lg:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
+                        Stage Technicien informatique
+                      </h6>
+                      <span className="text-primaryColor md:text-xl text-sm block mb-4">
+                        2016
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-primaryColor md:text-lg text-sm">
+                        Gestion et résolution des incidents - Entretien de l&apos;active
+                        Directory
+                      </p>
+                      <p className="text-primaryColor md:text-lg text-sm mt-2">
+                        Installation des machines Windows/Linux - Mise à jour des machines
+                      </p>
+                    </div>
+                  </div>
                 </div>
+
                 <div
                   data-aos="fade-up"
                   data-aos-duration="1500"
                   data-aos-delay="400"
-                  className="flex flex-col justify-center gap-2 px-4 py-4 border-2 border-primaryColor ring-2 ring-primaryColor"
+                  className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
                 >
-                  <h6 className="text-gray-50 md:text-xl text-sm ">
-                    Technicien de maintenance
-                  </h6>
-                  <span className="text-primaryColor md:text-xl text-sm">2015</span>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    Installation de postes de travail - Installation d&apos;imprimantes en
-                  </p>
-                  <p className="text-primaryColor md:text-xl text-sm">
-                    réseau - Maintenance préventive
-                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
+                  <div className="flex flex-col justify-between h-full">
+                    <div>
+                      <h6 className="text-gray-50 lg:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
+                        Technicien de maintenance
+                      </h6>
+                      <span className="text-primaryColor md:text-xl text-sm block mb-4">
+                        2015
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-primaryColor md:text-lg text-sm">
+                        Installation de postes de travail - Installation
+                        d&apos;imprimantes en réseau
+                      </p>
+                      <p className="text-primaryColor md:text-lg text-sm mt-2">
+                        Maintenance préventive
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 bg-primaryColor text-white p-3  shadow-lg hover:bg-blue-600 transition duration-300"
+          className="fixed bottom-5 right-5 bg-gradient-to-r from-primaryColor to-yellow-500 text-white p-4 rounded-full shadow-lg shadow-primaryColor/30 hover:scale-110 transition-all duration-300 z-20"
         >
-          ⬆️
+          <i className="ri-arrow-up-line text-xl"></i>
         </button>
       )}
     </section>
