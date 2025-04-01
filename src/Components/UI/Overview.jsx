@@ -113,11 +113,11 @@ const Overview = () => {
                     <div className="absolute w-20 h-20 bg-primaryColor/20 rounded-full filter blur-xl animate-ping"></div>
                     <div className="absolute w-16 h-16 bg-yellow-500/20 rounded-full filter blur-lg animate-ping animation-delay-1000"></div>
                     <div className="absolute w-24 h-24 bg-primaryColor/10 rounded-full filter blur-md group-hover:scale-150 transition-all duration-700"></div>
-                    <div className="z-10 text-center transform transition-all duration-500 group-hover:scale-110">
+                    <div className="z-10 text-center transform transition-all duration-500 group-hover:scale-110 cursor-pointer">
                       <p className="lg:text-xl font-bold text-white mb-2 animate-pulse group-hover:text-yellow-400 transition-colors duration-300">
                         🌟 Téléchargez mon CV ! 🌟
                       </p>
-                      <p className="text-sm text-primaryColor mb-3 group-hover:text-white transition-colors duration-300">
+                      <p className="text-sm text-primaryColor mb-3 group-hover:text-white transition-colors duration-300 cursor-pointer">
                         Découvrez mes compétences et mon parcours
                       </p>
                       <div className="animate-bounce group-hover:animate-ping">
@@ -133,18 +133,19 @@ const Overview = () => {
                   <div className="absolute bottom-0 right-1/3 w-2 h-2 bg-primaryColor rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:transform group-hover:translate-y-10 group-hover:delay-300"></div>
                 </div>
 
-                <div className="flex flex-col gap-6 justify-center">
+                <div className="flex flex-col gap-6 justify-center cursor-pointer">
                   <div
                     data-aos="fade-up"
                     data-aos-duration="1500"
-                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative cursor-pointer"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500 cursor-pointer"></div>
                     <Link
                       to="/projects-1"
-                      className="lg:text-xl text-sm text-white group-hover:text-primaryColor  flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full"
+                      className="lg:text-xl text-sm text-white group-hover:text-primaryColor  flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full cursor-pointer"
                     >
-                      <i className="ri-folder-open-line"></i> Go see my projects here!
+                      <i className="ri-folder-open-line"></i>
+                      <span className="cursor-pointer">Go see my projects here!</span>
                     </Link>
                   </div>
 
@@ -152,14 +153,15 @@ const Overview = () => {
                     data-aos="fade-up"
                     data-aos-duration="1900"
                     data-aos-delay="300"
-                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative cursor-pointer"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500 cursor-pointer"></div>
                     <Link
                       to="/resume"
-                      className="text-sm lg:text-xl text-white group-hover:text-primaryColor flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full"
+                      className="text-sm lg:text-xl text-white group-hover:text-primaryColor flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full cursor-pointer"
                     >
-                      <i className="ri-code-box-line"></i> Compétences techniques !
+                      <i className="ri-code-box-line"></i>
+                      <span className="cursor-pointer">Compétences techniques !</span>
                     </Link>
                   </div>
 
@@ -167,18 +169,20 @@ const Overview = () => {
                     data-aos="fade-up"
                     data-aos-duration="2000"
                     data-aos-delay="400"
-                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative cursor-pointer"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
-                    <span className="text-sm lg:text-xl text-white group-hover:text-primaryColor flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full">
+                    <span className="text-sm lg:text-xl text-white group-hover:text-primaryColor flex items-center justify-center gap-2 transform transition-all duration-500 hover:scale-105 w-full cursor-pointer">
                       {Error ? (
                         <a
                           href={cv}
                           download
                           className="flex items-center justify-center gap-2 w-full"
                         >
-                          <i className="ri-file-download-line"></i> Récupérer le PDF
-                          maintenant !
+                          <i className="ri-file-download-line"></i>
+                          <span className="cursor-pointer">
+                            Récupérer le PDF maintenant !
+                          </span>
                         </a>
                       ) : (
                         <Link
@@ -195,17 +199,17 @@ const Overview = () => {
                     data-aos="fade-up"
                     data-aos-duration="2200"
                     data-aos-delay="500"
-                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative"
+                    className="w-full border border-primaryColor/50 p-5 bg-gradient-to-r from-black/80 to-gray-900/80 text-center rounded-lg shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 group overflow-hidden relative cursor-pointer"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-20 transition-all duration-500 cursor-pointer"></div>
                     <Link
                       to="/apropos"
-                      className="lg:flex lg:items-center lg:justify-center lg:gap-2 text-xl text-white group-hover:text-primaryColor  transform transition-all duration-500 hover:scale-105 w-full"
+                      className="lg:flex lg:items-center lg:justify-center lg:gap-2 text-xl text-white group-hover:text-primaryColor  transform transition-all duration-500 hover:scale-105 w-full cursor-pointer"
                     >
                       <span className="hidden md:block text-xl self-start">
                         <i className="ri-user-line"></i>
                       </span>
-                      <span className="self-center text-sm lg:text-xl">
+                      <span className="self-center text-sm lg:text-xl cursor-pointer">
                         À propos de moi !
                       </span>
                     </Link>
