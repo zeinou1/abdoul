@@ -1,46 +1,74 @@
-
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
-function MySeoComP() {
+function MySeoComP({
+  title = "Portfolio - Développeur Front-End React",
+  description = "Développeur web front-end junior en reconversion. Passionné par React, je suis à la recherche de nouvelles opportunités pour mettre en pratique mes compétences et contribuer à des projets innovants",
+  url = "https://abdlkdrmz.vercel.app/",
+  image = "https://raw.githubusercontent.com/zeinou1/P-9-SEO/main/assets/images/nina.webp",
+}) {
   const DataSchemaOrg = {
     "@context": "http://schema.org",
     "@type": "LocalBusiness",
-    name: "Portfolio",
-    image:
-      "https://raw.githubusercontent.com/zeinou1/P-9-SEO/main/assets/images/nina.webp",
+    name: "Portfolio Mohamed Zeinoudini Abdoul-kader",
+    image: image,
     address: {
       "@type": "PostalAddress",
-      streetAddress: " Nanterre, France ",
+      streetAddress: "Nanterre, France",
       addressLocality: "France",
-      postalCode: " 92000",
+      postalCode: "92000",
       addressCountry: "FR",
     },
     telephone: "07 68 63 85 29",
     priceRange: "",
     openingHours: "",
-    url: "https://abdlkdrmz.vercel.app/",
+    url: url,
     sameAs: [
-      "http://www.facebook.com/abdoul",
-      "http://www.twitter.com/abdoul",
+      "https://github.com/zeinou1",
+      "https://www.linkedin.com/in/abdoul-kader-mohamed-zeinoudini-474229137/",
     ],
-    description:
-      "Développeur web front-end junior en reconversion. Passionné par React, je suis à la recherche de nouvelles opportunités pour mettre en pratique mes compétences et contribuer à des projets innovants",
+    description: description,
   };
-  return (
-    <section>
-      <div className="container mx-auto px-4 ">
 
-      <Helmet>
-        <title>Go to look my portfolio</title>
-        <meta name="description" content="Développeur web front-end junior en reconversion. Passionné par React, je suis à la recherche de nouvelles opportunités pour mettre en pratique mes compétences et contribuer à des projets innovants" />
-        <script type="application/ld+json">
-          {JSON.stringify(DataSchemaOrg)}
-        </script>
-      </Helmet>
-      <h1 className="text-primaryColor leading-10">Lover de React, Avec un parcours initial dans le domaine informatique, j&apos;ai entrepris une reconversion pour me spécialiser dans le développement web. Passionné par la création d&apos;interfaces modernes et performantes, j&apos;ai perfectionné mes compétences sur des technologies comme JavaScript, React, HTML,CSS et tailwindcss. En 2024, j&apos;ai validé mes compétences chez OpenClassrooms, renforçant ainsi mon expertise dans la création d&apos;applications web et l&apos;adoption des meilleures pratiques de développement.</h1>
-      <p></p>
-      </div>
-    </section>
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Mohamed Zeinoudini Abdoul-kader" />
+      <meta
+        name="keywords"
+        content="développeur, front-end, React, JavaScript, HTML, CSS, portfolio, web"
+      />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={url} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={image} />
+
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
+
+      {/* Schema.org JSON-LD */}
+      <script type="application/ld+json">{JSON.stringify(DataSchemaOrg)}</script>
+    </Helmet>
   );
 }
+
+MySeoComP.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
+  image: PropTypes.string,
+};
+
 export default MySeoComP;

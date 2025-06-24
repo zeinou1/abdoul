@@ -23,41 +23,45 @@ const Projects = ({ project }) => {
 
       <div className="container h-auto relative z-10 max-w-6xl mx-auto px-4">
         <div
-          className={`backdrop-blur-sm bg-black/30 p-8 rounded-xl shadow-2xl border border-primaryColor/20 transform transition-all duration-1000 ${
+          className={`backdrop-blur-sm bg-black/30 p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl border border-primaryColor/20 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
           {/* Partie Project - Header */}
-          <div className="flex flex-col gap-9 lg:gap-6 mb-12">
-            <h2 className="md:text-2xl text-xl text-center font-bold bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent md:text-left transform transition-all duration-500 hover:scale-105">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:gap-9 mb-12">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center font-bold bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent md:text-left transform transition-all duration-500 hover:scale-105">
               {project.title}
             </h2>
 
             {/* Description */}
-            <div className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-[1.02]">
+            <div className="backdrop-blur-sm bg-black/50 p-4 sm:p-6 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-[1.02]">
               <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <i className="ri-information-line text-2xl text-primaryColor"></i>
-                  <h3 className="text-xl font-semibold text-white">Description</h3>
+                  <i className="ri-information-line text-xl sm:text-2xl text-primaryColor"></i>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">
+                    Description
+                  </h3>
                 </div>
-                <p className="text-primaryColor md:text-lg text-sm leading-8 md:text-left text-center">
+                <p className="text-primaryColor text-sm sm:text-base md:text-lg lg:text-xl leading-6 sm:leading-7 md:leading-8 md:text-left text-center">
                   {project.infos}
                 </p>
               </div>
             </div>
 
             {/* Technologies */}
-            <div className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-[1.02]">
+            <div className="backdrop-blur-sm bg-black/50 p-4 sm:p-6 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-[1.02]">
               <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <i className="ri-code-s-slash-line text-2xl text-primaryColor"></i>
-                  <h3 className="text-xl font-semibold text-white">Technologies</h3>
+                  <i className="ri-code-s-slash-line text-xl sm:text-2xl text-primaryColor"></i>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">
+                    Technologies
+                  </h3>
                 </div>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                   {project.languages.map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1 bg-gradient-to-r from-primaryColor/20 to-yellow-500/20 backdrop-blur-sm rounded-full border border-primaryColor/30 text-white md:text-md text-sm transform transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-primaryColor/40 hover:to-yellow-500/40 hover:border-primaryColor"
+                      className="px-3 py-1 bg-gradient-to-r from-primaryColor/20 to-yellow-500/20 backdrop-blur-sm rounded-full border border-primaryColor/30 text-white text-sm sm:text-base md:text-lg transform transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-primaryColor/40 hover:to-yellow-500/40 hover:border-primaryColor"
                     >
                       {item}
                     </span>
@@ -72,8 +76,8 @@ const Projects = ({ project }) => {
             <div className="relative group mb-8">
               <div className="absolute -inset-1 bg-gradient-to-r from-primaryColor via-yellow-500 to-primaryColor rounded-full blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-300"></div>
               <div className="relative p-1">
-                <div className="w-24 h-24 flex items-center justify-center rounded-full bg-black border-2 border-primaryColor group-hover:border-yellow-500 transition-all duration-500">
-                  <i className="ri-code-s-slash-line text-5xl text-primaryColor group-hover:text-yellow-500 transition-all duration-500"></i>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-full bg-black border-2 border-primaryColor group-hover:border-yellow-500 transition-all duration-500">
+                  <i className="ri-code-s-slash-line text-3xl sm:text-4xl lg:text-5xl text-primaryColor group-hover:text-yellow-500 transition-all duration-500"></i>
                 </div>
               </div>
             </div>
@@ -83,11 +87,11 @@ const Projects = ({ project }) => {
                 <a
                   target="_blank"
                   href={project.link}
-                  className="backdrop-blur-sm bg-black/50 p-4 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2 group"
+                  className="backdrop-blur-sm bg-black/50 p-3 sm:p-4 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2 group"
                   rel="noreferrer"
                 >
-                  <i className="ri-global-line text-xl text-primaryColor group-hover:text-yellow-500 transition-colors duration-300"></i>
-                  <span className="text-white group-hover:text-yellow-500 transition-colors duration-300 text-md md:text-lg">
+                  <i className="ri-global-line text-lg sm:text-xl text-primaryColor group-hover:text-yellow-500 transition-colors duration-300"></i>
+                  <span className="text-white group-hover:text-yellow-500 transition-colors duration-300 text-sm sm:text-base md:text-lg">
                     Voir le site
                   </span>
                 </a>
@@ -97,11 +101,11 @@ const Projects = ({ project }) => {
                 <a
                   target="_blank"
                   href={project.code}
-                  className="backdrop-blur-sm bg-black/50 p-4 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2 group"
+                  className="backdrop-blur-sm bg-black/50 p-3 sm:p-4 rounded-xl border border-primaryColor/30 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2 group"
                   rel="noreferrer"
                 >
-                  <i className="ri-github-fill text-xl text-primaryColor group-hover:text-yellow-500 transition-colors duration-300"></i>
-                  <span className="text-white group-hover:text-yellow-500 transition-colors duration-300 text-md md:text-lg">
+                  <i className="ri-github-fill text-lg sm:text-xl text-primaryColor group-hover:text-yellow-500 transition-colors duration-300"></i>
+                  <span className="text-white group-hover:text-yellow-500 transition-colors duration-300 text-sm sm:text-base md:text-lg">
                     Voir le code
                   </span>
                 </a>
@@ -113,10 +117,12 @@ const Projects = ({ project }) => {
           <div className="flex justify-center mt-12">
             <Link
               to="/"
-              className="px-8 py-3 bg-gradient-to-r from-primaryColor to-yellow-500 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-primaryColor/50 flex items-center gap-2"
+              className="px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-primaryColor to-yellow-500 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-primaryColor/50 flex items-center gap-2"
             >
-              <i className="ri-home-4-line"></i>
-              <span className="font-bold">Retour à l'accueil</span>
+              <i className="ri-home-4-line text-base sm:text-lg"></i>
+              <span className="font-bold text-sm sm:text-base md:text-lg">
+                Retour à l'accueil
+              </span>
             </Link>
           </div>
         </div>

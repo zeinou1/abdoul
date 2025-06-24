@@ -63,18 +63,18 @@ const About = () => {
       <div className="relative z-10">
         <Titre
           title={
-            <span className="md:text-xl lg:text-3xl text-sm bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent">
+            <span className="text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent">
               À propos{" "}
             </span>
           }
         />
         <div className="container max-w-6xl mx-auto px-4">
           <div
-            className={`backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 ${
+            className={`backdrop-blur-sm bg-black/30 p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <p className="text-center md:text-left leading-10 text-white md:text-xl text-sm">
+            <p className="text-center md:text-left leading-6 sm:leading-7 md:leading-8 lg:leading-10 text-white text-sm sm:text-base md:text-lg lg:text-xl">
               Développeur Front-End Junior, avec une solide base en informatique, je me
               spécialise dans la conception et le développement d'interfaces modernes et
               performantes. <br />. Passionné par le développement web, j'ai perfectionné
@@ -95,14 +95,14 @@ const About = () => {
             <div className="flex justify-center md:justify-start mt-6">
               <button
                 onClick={handleVisibility}
-                className="px-6 py-3 bg-gradient-to-r from-primaryColor to-yellow-500 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-primaryColor/50 flex items-center gap-2"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primaryColor to-yellow-500 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-primaryColor/50 flex items-center gap-2"
               >
                 {!showText ? (
-                  <span className="md:text-xl text-sm text-white flex items-center gap-2">
+                  <span className="text-sm sm:text-base md:text-lg lg:text-xl text-white flex items-center gap-2">
                     <i className="ri-arrow-down-line"></i> Lire la suite
                   </span>
                 ) : (
-                  <span className="md:text-xl text-sm text-white flex items-center gap-2">
+                  <span className="text-sm sm:text-base md:text-lg lg:text-xl text-white flex items-center gap-2">
                     <i className="ri-arrow-up-line"></i> Réduire
                   </span>
                 )}
@@ -111,7 +111,7 @@ const About = () => {
 
             {showText && (
               <div className="mt-6 backdrop-blur-sm bg-primaryColor/10 p-4 rounded-lg border border-primaryColor/30 transform transition-all duration-500 animate-fadeIn">
-                <p className="md:text-xl text-sm text-white font-bold leading-8 text-center md:text-left">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white font-bold leading-6 sm:leading-7 md:leading-8 text-center md:text-left">
                   Je suis à la recherche d'une opportunité avec laquelle je peux
                   contribuer avec mon expertise en React tout en continuant à grandir en
                   tant que développeur. Prêt à relever de nouveaux défis.
@@ -120,81 +120,29 @@ const About = () => {
             )}
           </div>
 
-          {/* Contact section */}
+          {/* Redirection vers Contact */}
           <div
-            className={`backdrop-blur-sm bg-black/30 p-6 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 ${
+            className={`backdrop-blur-sm bg-black/30 p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl border border-primaryColor/20 mb-12 transform transition-all duration-1000 text-center ${
               activeSection === "contact"
                 ? "scale-[1.02] shadow-primaryColor/30"
                 : "scale-100"
             }`}
           >
-            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent inline-block">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent inline-block">
               Contact
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <div className="flex flex-col space-y-2">
-                  <div className="flex items-center gap-2">
-                    <i className="ri-user-fill text-primaryColor text-xl"></i>
-                    <span className="text-primaryColor text-sm md:text-xl font-semibold">
-                      Nom:
-                    </span>
-                  </div>
-                  <span className="text-sm md:text-xl text-white ml-6">
-                    Mohamed zeinoudini abdoul-kader
-                  </span>
-                </div>
-
-                <div className="flex flex-col space-y-2">
-                  <div className="flex items-center gap-2">
-                    <i className="ri-phone-fill text-primaryColor text-xl"></i>
-                    <span className="text-primaryColor text-sm md:text-xl font-semibold">
-                      Téléphone:
-                    </span>
-                  </div>
-                  <span className="text-sm md:text-xl text-white ml-6">0768638529</span>
-                </div>
-
-                <div className="flex flex-col space-y-2">
-                  <div className="flex items-center gap-2">
-                    <i className="ri-mail-fill text-primaryColor text-xl"></i>
-                    <span className="text-primaryColor text-sm md:text-xl font-semibold">
-                      E-mail:
-                    </span>
-                  </div>
-                  <a
-                    href="mailto:contactmehere@gmail.com"
-                    className="text-sm md:text-xl text-white ml-6 hover:text-primaryColor transition-colors duration-300"
-                  >
-                    contactmehere@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <h4 className="text-xl font-semibold text-white mb-4">Réseaux sociaux</h4>
-                <div className="space-y-4">
-                  <a
-                    href="https://github.com/zeinou1"
-                    className="flex items-center gap-4 p-3 border border-primaryColor/30 rounded-lg bg-black/50 transform transition-all duration-300 hover:scale-105 hover:bg-primaryColor/20 hover:border-primaryColor"
-                  >
-                    <i className="ri-github-fill text-3xl text-white"></i>
-                    <span className="text-white hover:text-primaryColor transition-colors duration-300">
-                      Github
-                    </span>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/abdoul-kader-mohamed-zeinoudini-474229137/"
-                    className="flex items-center gap-4 p-3 border border-primaryColor/30 rounded-lg bg-black/50 transform transition-all duration-300 hover:scale-105 hover:bg-primaryColor/20 hover:border-primaryColor"
-                  >
-                    <i className="ri-linkedin-fill text-3xl text-white"></i>
-                    <span className="text-white hover:text-primaryColor transition-colors duration-300">
-                      LinkedIn
-                    </span>
-                  </a>
-                </div>
-              </div>
+            <div className="space-y-6">
+              <p className="text-white text-sm sm:text-base md:text-lg">
+                Vous souhaitez me contacter ? Découvrez toutes mes informations de contact
+                sur ma page dédiée.
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-primaryColor to-yellow-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl hover:shadow-primaryColor/25 hover:-translate-y-1 transition-all duration-300"
+              >
+                <i className="ri-mail-line text-lg"></i>
+                Aller à la page Contact
+              </a>
             </div>
           </div>
 

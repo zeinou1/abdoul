@@ -9,7 +9,11 @@ const Project2 = () => {
 
   return (
     <section className="relative">
-      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">Projet 2</span>} />
+      <Titre
+        title={
+          <span className="text-base sm:text-lg md:text-xl lg:text-2xl">Projet 2</span>
+        }
+      />
       <div className="project-2">
         <Projects project={project[1]} />
       </div>

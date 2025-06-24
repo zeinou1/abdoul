@@ -1,51 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  
-  font-family: "Press Start 2P", Ubuntu, Helvetica, sans-serif;
 
+/* Focus styles optimisés pour l'expérience utilisateur */
+*:focus {
+  outline: none;
 }
-section 
-{
+
+/* Focus visible seulement pour la navigation clavier */
+*:focus-visible {
+  outline: 2px solid #4a6cf7;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Réduire les animations pour les utilisateurs préférant moins de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Améliorer le contraste pour une meilleure lisibilité */
+:root {
+  --primary-color: #4a6cf7;
+  --text-high-contrast: #ffffff;
+  --text-medium-contrast: #e5e7eb;
+  --focus-ring: #4a6cf7;
+}
+
+body {
+  font-family: "Press Start 2P", Ubuntu, Helvetica, sans-serif;
+}
+
+section {
   padding: 10px 0px;
 }
+
 .container {
   width: 1140px;
   padding: 0 50px;
   margin: auto;
 }
+
 a {
   text-decoration: none;
   color: unset;
 }
-a:hover {
-  color: unset;
+
+a:hover,
+a:focus {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
+
+/* Styles discrets pour les liens */
+a:focus {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--focus-ring);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
 ul {
   list-style: none;
 }
+
+/* Styles pour les boutons interactifs */
+button,
+[role="button"],
+.cursor-pointer {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+[role="button"]:hover,
+.cursor-pointer:hover {
+  transform: scale(1.05);
+}
+
+button:focus,
+[role="button"]:focus {
+  outline: none;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 1px solid var(--focus-ring);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+button:active,
+[role="button"]:active {
+  transform: scale(0.98);
+}
+
 /* header layout */
 @media only screen and (max-width: 1024px) {
-  .navigation{
+  .navigation {
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-   transform: translateX(-100%);
-    transition: transform .3s ease-in;
-    z-index: 199999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+    z-index: 999999;
   }
   .header__menu {
     width: 100%;
     height: 100%;
     position: absolute;
-    top:0px;
+    top: 0px;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -53,28 +133,28 @@ ul {
     justify-content: center;
     background: #111722;
     gap: 12px;
-
   }
   .show__menu {
     display: block;
     transform: translateX(0);
   }
-  
 }
+
 .active {
-  border-bottom: 2px solid #4A6CF7;
+  border-bottom: 2px solid #4a6cf7;
   padding-bottom: 6px;
 }
+
 /* sticky header */
-.menu__sticky { 
+.menu__sticky {
   width: 100%;
   height: 70px;
   margin-top: 2rem;
-  background: #1D232A;
+  background: #1d232a;
   position: sticky;
-  top:0;
+  top: 0;
   left: 0;
-  z-index: 99999  ;
+  z-index: 999999;
   box-shadow: 3px 3px 8px -3px #000000;
 }
 
@@ -82,6 +162,30 @@ ul {
   .menu__sticky {
     display: none;
   }
-  
 }
 
+/* Styles d'accessibilité pour les états hover et focus */
+.group:hover .group-hover\:text-white,
+.group:focus .group-focus\:text-white {
+  color: white !important;
+}
+
+.group:hover .group-hover\:border-primaryColor,
+.group:focus .group-focus\:border-primaryColor {
+  border-color: var(--primary-color) !important;
+}
+
+.group:hover .group-hover\:shadow-lg,
+.group:focus .group-focus\:shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.group:hover .group-hover\:scale-110,
+.group:focus .group-focus\:scale-110 {
+  transform: scale(1.1) !important;
+}
+
+.group:hover .group-hover\:opacity-70,
+.group:focus .group-focus\:opacity-70 {
+  opacity: 0.7 !important;
+}

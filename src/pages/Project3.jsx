@@ -1,8 +1,8 @@
+import { useState } from "react";
 import Buttons from "../Components/UI/Buttons";
 import Projects from "../Components/UI/Projects";
-import { projectsData } from "../assets/data/projectsData";
-import { useState } from "react";
 import Titre from "../Components/UI/Titre";
+import { projectsData } from "../assets/data/projectsData";
 
 const Project3 = () => {
   const [project] = useState(projectsData);
@@ -11,7 +11,11 @@ const Project3 = () => {
 
   return (
     <section>
-      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">Projet 3</span>} />
+      <Titre
+        title={
+          <span className="text-base sm:text-lg md:text-xl lg:text-2xl">Projet 3</span>
+        }
+      />
       <div className="project-2">
         <Projects project={project[2]} />
       </div>

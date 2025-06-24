@@ -21,7 +21,11 @@ const Resume = () => {
       className="relative min-h-screen bg-gradient-to-b from-gray-900 to-black py-10"
     >
       <Titre
-        title={<span className="md:text-xl lg:text-3xl text-sm">Compétences</span>}
+        title={
+          <span className="text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl">
+            Compétences
+          </span>
+        }
       />
       {/* Éléments décoratifs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -32,7 +36,7 @@ const Resume = () => {
 
       <div className="container relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent mb-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primaryColor to-yellow-500 bg-clip-text text-transparent mb-2">
             Front-End
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-primaryColor to-yellow-500 mx-auto rounded-full"></div>
@@ -50,20 +54,22 @@ const Resume = () => {
             <div
               data-aos="zoom-in"
               data-aos-duration="1500"
-              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-primaryColor/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-200 hover:border-primaryColor/60 h-full flex flex-col"
+              className="backdrop-blur-md bg-black/60 p-4 sm:p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-primaryColor/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-200 hover:border-primaryColor/60 h-full flex flex-col"
             >
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
-                  <i className="ri-html5-fill text-2xl text-primaryColor"></i>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-html5-fill text-xl sm:text-2xl text-primaryColor"></i>
                 </div>
-                <h3 className="text-md font-semibold text-white">HTML & CSS</h3>
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white">
+                  HTML & CSS
+                </h3>
               </div>
               <ul className="space-y-2 mt-4">
-                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                <li className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                   <span className="text-primaryColor">→</span> Implémenter une interface
                   responsive avec HTML et CSS
                 </li>
-                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                <li className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                   <span className="text-primaryColor">→</span> Intégrer du contenu
                   conformément à une maquette avec HTML et CSS
                 </li>
@@ -81,23 +87,25 @@ const Resume = () => {
             <div
               data-aos="zoom-in"
               data-aos-duration="1500"
-              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-yellow-400/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-200 hover:border-yellow-400/60 h-full flex flex-col"
+              className="backdrop-blur-md bg-black/60 p-4 sm:p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-yellow-400/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-200 hover:border-yellow-400/60 h-full flex flex-col"
             >
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
-                  <i className="ri-javascript-fill text-2xl text-yellow-400"></i>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-javascript-fill text-xl sm:text-2xl text-yellow-400"></i>
                 </div>
-                <h3 className="text-md font-semibold text-white">JavaScript</h3>
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white">
+                  JavaScript
+                </h3>
               </div>
               <ul className="space-y-2 mt-4">
-                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                <li className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                   <span className="text-primaryColor">→</span> Gérer les événements
                 </li>
-                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                <li className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                   <span className="text-primaryColor">→</span> Manipuler les éléments du
                   DOM avec JavaScript
                 </li>
-                <li className="md:text-md text-sm leading-6 flex items-center gap-2">
+                <li className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                   <span className="text-primaryColor">→</span> Récupérer les données
                   utilisateurs via des formulaires
                 </li>
@@ -115,36 +123,42 @@ const Resume = () => {
             <div
               data-aos="zoom-in"
               data-aos-duration="1500"
-              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-blue-700/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-50 hover:border-blue-700/60 h-full flex flex-col"
+              className="backdrop-blur-md bg-black/60 p-4 sm:p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-blue-700/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-50 hover:border-blue-700/60 h-full flex flex-col"
             >
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
-                  <i className="ri-reactjs-line text-2xl text-blue-700"></i>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-reactjs-line text-xl sm:text-2xl text-blue-700"></i>
                 </div>
-                <h3 className="text-md font-semibold text-white">React</h3>
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white">
+                  React
+                </h3>
               </div>
               <ul className="space-y-2 mt-4">
-                <li className="md:text-md text-sm leading-8 font-semibold">Les hooks</li>
-                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                <li className="text-xs sm:text-sm md:text-base leading-6 sm:leading-7 md:leading-8 font-semibold">
+                  Les hooks
+                </li>
+                <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 ml-4 flex items-center gap-2">
                   <span className="text-yellow-500">→</span> useState
                 </li>
-                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 ml-4 flex items-center gap-2">
                   <span className="text-yellow-500">→</span> useEffect
                 </li>
-                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 ml-4 flex items-center gap-2">
                   <span className="text-yellow-500">→</span> useContext
                 </li>
-                <li className="md:text-md text-sm leading-6 font-semibold mt-2">
+                <li className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 font-semibold mt-2">
                   État Global
                 </li>
-                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 ml-4 flex items-center gap-2">
                   <span className="text-yellow-500">→</span> API Context
                 </li>
-                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 ml-4 flex items-center gap-2">
                   <span className="text-yellow-500">→</span> Redux Toolkit
                 </li>
-                <li className="md:text-md text-sm leading-6 font-semibold mt-2">Test</li>
-                <li className="text-primaryColor md:text-md text-sm leading-6 ml-4 flex items-center gap-2">
+                <li className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 font-semibold mt-2">
+                  Test
+                </li>
+                <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 ml-4 flex items-center gap-2">
                   <span className="text-yellow-500">→</span> Tests unitaires
                 </li>
               </ul>
@@ -161,54 +175,56 @@ const Resume = () => {
             <div
               data-aos="zoom-in"
               data-aos-duration="1500"
-              className="backdrop-blur-md bg-black/60 p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-green-600/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-50 hover:border-green-600/60 h-full flex flex-col"
+              className="backdrop-blur-md bg-black/60 p-4 sm:p-6 rounded-xl border border-primaryColor/40 shadow-lg hover:shadow-green-600/40 transition-all duration-500 transform hover:scale-[1.03] text-gray-50 hover:border-green-600/60 h-full flex flex-col"
             >
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-12 h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
-                  <i className="ri-psychotherapy-fill text-2xl text-green-600"></i>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black border-primaryColor border-4 flex items-center justify-center">
+                  <i className="ri-psychotherapy-fill text-xl sm:text-2xl text-green-600"></i>
                 </div>
-                <h3 className="text-md font-semibold text-white">Diverses</h3>
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white">
+                  Diverses
+                </h3>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-4">
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2">
+                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2 text-xs sm:text-sm">
                     Divers
                   </h4>
                   <ul className="space-y-1">
-                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                    <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                       <span className="text-yellow-500">→</span> SEO
                     </li>
-                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                    <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                       <span className="text-yellow-500">→</span> Debug
                     </li>
-                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                    <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                       <span className="text-yellow-500">→</span> API REST
                     </li>
                   </ul>
                 </div>
 
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2">
+                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2 text-xs sm:text-sm">
                     Méthodologies
                   </h4>
                   <ul className="space-y-1">
-                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                    <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                       <span className="text-yellow-500">→</span> Agile
                     </li>
                   </ul>
 
-                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2 mt-4">
+                  <h4 className="font-semibold text-white border-b border-primaryColor/30 pb-1 mb-2 mt-4 text-xs sm:text-sm">
                     Outils Dev
                   </h4>
                   <ul className="space-y-1">
-                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                    <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                       <span className="text-yellow-500">→</span> VSCode
                     </li>
-                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                    <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                       <span className="text-yellow-500">→</span> Git
                     </li>
-                    <li className="text-primaryColor md:text-md text-sm leading-6 flex items-center gap-2">
+                    <li className="text-primaryColor text-xs sm:text-sm md:text-base leading-5 sm:leading-6 flex items-center gap-2">
                       <span className="text-yellow-500">→</span> WebStorm
                     </li>
                   </ul>

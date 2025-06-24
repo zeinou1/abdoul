@@ -23,7 +23,11 @@ const Project1 = () => {
   // }
   return (
     <section className="relative">
-      <Titre title={<span className="md:text-xl lg:text-3xl text-sm">Projet 1</span>} />
+      <Titre
+        title={
+          <span className="text-base sm:text-lg md:text-xl lg:text-2xl">Projet 1</span>
+        }
+      />
       <div className="project-0">
         <Projects project={project[0]} />
       </div>
