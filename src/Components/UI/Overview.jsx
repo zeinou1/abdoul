@@ -178,7 +178,7 @@ const Overview = () => {
               </div>
             </div>
 
-            {/* Bottom Stats/Highlights */}
+            {/* Bottom Stats */}
             <div className="mt-12 sm:mt-16 lg:mt-20 pt-6 sm:pt-8 lg:pt-10 border-t border-gray-700/50">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 text-center">
                 <div className="space-y-2 sm:space-y-3">
