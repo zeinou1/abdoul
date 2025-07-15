@@ -101,7 +101,7 @@ const Overview = () => {
                   Découvrez mon profil
                 </h2>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {/* Projects Card */}
                   <Link
                     to="/projects-1"
@@ -160,9 +160,12 @@ const Overview = () => {
                   </Link>
 
                   {/* Contact Card */}
-                  <div className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1">
+                  <Link
+                    to="/contact"
+                    className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  >
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <Link to="/contact" className="relative">
+                    <div className="relative">
                       <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-colors duration-300">
                         <i className="ri-mail-line text-2xl text-purple-500"></i>
                       </div>
@@ -172,15 +175,34 @@ const Overview = () => {
                       <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
                         Échangeons sur vos opportunités
                       </p>
-                    </Link>
-                  </div>
+                    </div>
+                  </Link>
+
+                  {/* Blog Card */}
+                  {/* <Link
+                    to="/blog"
+                    className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative">
+                      <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-500/30 transition-colors duration-300">
+                        <i className="ri-article-line text-2xl text-orange-500"></i>
+                      </div>
+                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-orange-500 transition-colors duration-300">
+                        Blog Tech
+                      </h3>
+                      <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                        Mes articles et tutoriels techniques
+                      </p>
+                    </div>
+                  </Link> */}
                 </div>
               </div>
             </div>
 
             {/* Bottom Stats */}
             <div className="mt-12 sm:mt-16 lg:mt-20 pt-6 sm:pt-8 lg:pt-10 border-t border-gray-700/50">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
                 <div className="space-y-2 sm:space-y-3">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primaryColor">
                     5+
@@ -195,6 +217,14 @@ const Overview = () => {
                   </div>
                   <div className="text-xs sm:text-sm lg:text-base text-gray-400">
                     Spécialisation
+                  </div>
+                </div>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-500">
+                    Blog Tech
+                  </div>
+                  <div className="text-xs sm:text-sm lg:text-base text-gray-400">
+                    Articles
                   </div>
                 </div>
                 <div className="space-y-2 sm:space-y-3">

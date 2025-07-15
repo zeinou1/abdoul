@@ -200,13 +200,13 @@ const About = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
                 <h6 className="text-gray-50 md:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
-                  Licence Réseau informatique
+                  Master Réseau informatique
                 </h6>
                 <p className="text-primaryColor md:text-xl text-sm">
                   ISI Dakar / Sénégal
                 </p>
                 <span className="text-primaryColor md:text-xl text-sm block mt-2">
-                  2015 - 2016
+                  2016
                 </span>
               </div>
             </div>
@@ -328,10 +328,10 @@ const About = () => {
                   data-aos="fade-up"
                   data-aos-duration="1500"
                   data-aos-delay="300"
-                  className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
+                  className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group overflow-auto"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
-                  <div className="flex flex-col justify-between h-full">
+                  <div className="flex flex-col justify-between h-full md:h-0">
                     <div>
                       <h6 className="text-gray-50 lg:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
                         Stage Technicien informatique
@@ -359,12 +359,12 @@ const About = () => {
                   className="backdrop-blur-sm bg-black/50 p-6 rounded-xl border-2 border-primaryColor/50 shadow-lg hover:shadow-primaryColor/30 transition-all duration-500 transform hover:scale-105 group"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-primaryColor to-yellow-600 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-xl"></div>
-                  <div className="flex flex-col justify-between h-full">
+                  <div className="flex flex-col justify-between h-full md:h-0 ">
                     <div>
-                      <h6 className="text-gray-50 lg:text-xl text-sm font-bold mb-3 group-hover:text-primaryColor transition-colors duration-300">
-                        Technicien de maintenance
+                      <h6 className="text-gray-50 lg:text-xl text-sm font-bold  group-hover:text-primaryColor transition-colors duration-300">
+                        Technicien Informatique
                       </h6>
-                      <span className="text-primaryColor md:text-xl text-sm block mb-4">
+                      <span className="text-primaryColor md:text-xl text-sm block mb-3">
                         2015
                       </span>
                     </div>

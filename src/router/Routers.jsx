@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import About from "../Components/UI/About";
 import Overview from "../Components/UI/Overview";
 import Resume from "../Components/UI/Resume";
+import Blog from "../pages/Blog";
+import BlogPost from "../pages/BlogPost";
 import Contact from "../pages/Contact";
 import ErrorPG from "../pages/ErrorPG.jsx";
 import Project0 from "../pages/Project0";
@@ -23,6 +25,8 @@ const Routers = () => {
       <Route path="/resume" element={<Resume />} />
       <Route path="/apropos" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      {/* <Route path="/blog" element={<Blog />} /> */}
+      <Route path="/blog/:id" element={<BlogPost />} />
 
       {/* Route catch-all pour les erreurs 404 - doit être en dernier */}
       <Route path="*" element={<ErrorPG />} />
