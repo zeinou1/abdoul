@@ -83,7 +83,7 @@ const Overview = () => {
                 </div>
 
                 {/* CTA Button */}
-                <div className="pt-4">
+                {/* <div className="pt-4">
                   <a
                     href={cv}
                     download
@@ -92,7 +92,7 @@ const Overview = () => {
                     <i className="ri-download-line text-xl"></i>
                     Télécharger mon CV
                   </a>
-                </div>
+                </div> */}
               </div>
 
               {/* Right Column - Navigation Cards */}
@@ -202,7 +202,7 @@ const Overview = () => {
 
             {/* Bottom Stats */}
             <div className="mt-12 sm:mt-16 lg:mt-20 pt-6 sm:pt-8 lg:pt-10 border-t border-gray-700/50">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-center">
                 <div className="space-y-2 sm:space-y-3">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primaryColor">
                     5+
@@ -219,14 +219,14 @@ const Overview = () => {
                     Spécialisation
                   </div>
                 </div>
-                <div className="space-y-2 sm:space-y-3">
+                {/* <div className="space-y-2 sm:space-y-3">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-500">
                     Blog Tech
                   </div>
                   <div className="text-xs sm:text-sm lg:text-base text-gray-400">
                     Articles
                   </div>
-                </div>
+                </div> */}
                 <div className="space-y-2 sm:space-y-3">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-500">
                     Disponible
